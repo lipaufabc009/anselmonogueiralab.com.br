@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  data-titulo-pt="Locais de Estudo | LIPA"
+  data-titulo-en="Study Sites | LIPA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locais de Estudo | LIPA</title>
+  <meta name="description" content="Locais de estudo do Laboratório de Interações Planta-Animal (LIPA).">
+  <script src="js/acesso.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/cabecalho.js" defer></script>
+  <script src="js/galeria-local.js" defer></script>
+  <script src="js/credito-foto.js" defer></script>
+  <script src="js/idioma.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo" data-pt="Ir para o conteúdo" data-en="Skip to content">Ir para o conteúdo</a>
+
+  <header class="topo">
+    <a class="topo__nome" href="index.html">LIPA - Laboratório de Interações Planta-Animal</a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="index.html"            data-pt="Home"            data-en="Home">Home</a></li>
+        <li><a href="equipe.html"           data-pt="Equipe"          data-en="Team">Equipe</a></li>
+        <li><a href="projetos.html"         data-pt="Projetos"        data-en="Projects">Projetos</a></li>
+        <li><a href="publicacoes.html"      data-pt="Publicações"     data-en="Publications">Publicações</a></li>
+        <li><a href="locais-de-estudo.html" aria-current="page"
+               data-pt="Locais de Estudo"  data-en="Study Sites">Locais de Estudo</a></li>
+        <li><a href="lipa-por-ai.html"      data-pt="LIPA por Aí"        data-en="LIPA Out There">LIPA por Aí</a></li>
+        <li><a href="links-uteis.html"      data-pt="Links úteis"     data-en="Useful links">Links úteis</a></li>
+        <li><a href="contato.html"          data-pt="Contato"         data-en="Contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <h1 class="so-leitor" data-pt="Locais de Estudo" data-en="Study Sites">Locais de Estudo</h1>
+
+    <!--
+      ══════════════════════════════════════════════════════════════════════
+      COMO ADICIONAR UM NOVO LOCAL:
+        1. Copie uma <section class="secao"> inteira até o </section>.
+        2. Troque o id, o código do local (data-local="...") no botão,
+           o título, subtítulo, descrição, src do mapa e as fotos.
+
+      COMO OBTER O LINK DO GOOGLE MAPS:
+        1. Acesse maps.google.com e busque o local.
+        2. Clique em "Compartilhar" → "Incorporar um mapa".
+        3. Copie o valor do atributo src do <iframe> e cole abaixo.
+
+      CÓDIGO DO LOCAL (data-local no botão e data-locais nas publicações):
+        diamantina | rio-preto | mucuge | ufabc | pentecostes | ampla-escala
+      ══════════════════════════════════════════════════════════════════════
+    -->
+
+    <!-- ── LOCAL 1: Diamantina - MG ──────────────────────────────────── -->
+    <section class="secao" id="local-diamantina">
+      <div class="container">
+        <div class="local__cabecalho">
+          <div>
+            <h2 class="local__titulo"
+              data-pt="Diamantina — MG"
+              data-en="Diamantina — MG">Diamantina — MG</h2>
+            <p class="local__subtitulo"
+              data-pt="Campo Rupestre"
+              data-en="Rupestrian Grassland">Campo Rupestre</p>
+            <p class="local__descricao"
+              data-pt="O Campo Rupestre é um ecossistema aflorado sobre rochas quartzíticas e ferruginosas nas regiões montanhosas do Brasil central. Caracterizado por solos rasos e pobres em nutrientes, abriga uma flora extraordinariamente diversa e com alto grau de endemismo. As condições extremas de radiação, temperatura e disponibilidade hídrica moldam interações únicas entre plantas e animais."
+              data-en="The Rupestrian Grassland is an ecosystem developed on quartzitic and ferruginous rocky outcrops in the mountainous regions of central Brazil. Characterized by shallow, nutrient-poor soils, it hosts an extraordinarily diverse flora with high endemism. The extreme conditions of radiation, temperature and water availability shape unique plant-animal interactions.">
+              O Campo Rupestre é um ecossistema aflorado sobre rochas quartzíticas e ferruginosas nas regiões montanhosas do Brasil central. Caracterizado por solos rasos e pobres em nutrientes, abriga uma flora extraordinariamente diversa e com alto grau de endemismo. As condições extremas de radiação, temperatura e disponibilidade hídrica moldam interações únicas entre plantas e animais.
+            </p>
+          </div>
+          <iframe class="local__mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61761.66583655419!2d-43.6571967574273!3d-18.2386374818449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaeb9ab8f0c38ff%3A0x20f6a7aa673dbbe1!2sDiamantina%2C%20MG%2C%2039100-000!5e1!3m2!1spt-BR!2sbr!4v1792773841499!5m2!1spt-BR!2sbr"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            data-pt-label="Mapa de Diamantina, MG" data-en-label="Map of Diamantina, MG"
+            title="Mapa de Diamantina, MG">
+          </iframe>
+        </div>
+
+        <div class="galeria-local">
+          <button type="button" class="galeria-local__btn galeria-local__btn--prev"
+            data-pt-label="Fotos anteriores" data-en-label="Previous photos"
+            aria-label="Fotos anteriores">&#8249;</button>
+          <ul class="galeria-local__faixa">
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/c-desvauxii.jpeg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/c-debilis-zoom.jpeg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/formiga-decora2.jpeg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/c-ramosa.jpeg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/c-nictitans.jpeg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/formiga-nictitans.jpg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+          </ul>
+          <button type="button" class="galeria-local__btn galeria-local__btn--next"
+            data-pt-label="Próximas fotos" data-en-label="Next photos"
+            aria-label="Próximas fotos">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LOCAL 2: São Gonçalo do Rio Preto - MG ────────────────────── -->
+    <section class="secao" id="local-rio-preto">
+      <div class="container">
+        <div class="local__cabecalho">
+          <div>
+            <h2 class="local__titulo"
+              data-pt="São Gonçalo do Rio Preto — MG"
+              data-en="São Gonçalo do Rio Preto — MG">São Gonçalo do Rio Preto — MG</h2>
+            <p class="local__subtitulo"
+              data-pt="Campo Rupestre / Cerrado"
+              data-en="Rupestrian Grassland / Cerrado">Campo Rupestre / Cerrado</p>
+            <p class="local__descricao"
+              data-pt="O Parque Estadual do Rio Preto abriga uma transição entre o Campo Rupestre e o Cerrado, na Serra do Espinhaço. A região apresenta grande diversidade de espécies vegetais e animais, com espécies endêmicas e ameaçadas de extinção. O laboratório realiza estudos de campo sobre interações planta-animal nesse mosaico de ecossistemas."
+              data-en="The Rio Preto State Park harbors a transition between Rupestrian Grassland and Cerrado in the Espinhaço Range. The region presents great diversity of plant and animal species, including endemic and threatened species. The laboratory conducts field studies on plant-animal interactions in this mosaic of ecosystems.">
+              O Parque Estadual do Rio Preto abriga uma transição entre o Campo Rupestre e o Cerrado, na Serra do Espinhaço. A região apresenta grande diversidade de espécies vegetais e animais, com espécies endêmicas e ameaçadas de extinção. O laboratório realiza estudos de campo sobre interações planta-animal nesse mosaico de ecossistemas.
+            </p>
+          </div>
+          <iframe class="local__mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15065.411205662424!2d-43.388094916978645!3d-18.006001421343512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xae9b3db88c4f0d%3A0x3b57a5998e38bf39!2sParque%20Estadual%20do%20Rio%20Preto!5e0!3m2!1spt-BR!2sbr!4v1792712722163!5m2!1spt-BR!2sbr"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            data-pt-label="Mapa de São Gonçalo do Rio Preto, MG"
+            data-en-label="Map of São Gonçalo do Rio Preto, MG"
+            title="Mapa de São Gonçalo do Rio Preto, MG">
+          </iframe>
+        </div>
+
+        <div class="galeria-local">
+          <button type="button" class="galeria-local__btn galeria-local__btn--prev"
+            data-pt-label="Fotos anteriores" data-en-label="Previous photos"
+            aria-label="Fotos anteriores">&#8249;</button>
+          <ul class="galeria-local__faixa">
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/campo.svg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+          </ul>
+          <button type="button" class="galeria-local__btn galeria-local__btn--next"
+            data-pt-label="Próximas fotos" data-en-label="Next photos"
+            aria-label="Próximas fotos">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LOCAL 3: Mucugê - BA ──────────────────────────────────────── -->
+    <section class="secao" id="local-mucuge">
+      <div class="container">
+        <div class="local__cabecalho">
+          <div>
+            <h2 class="local__titulo"
+              data-pt="Mucugê — BA"
+              data-en="Mucugê — BA">Mucugê — BA</h2>
+            <p class="local__subtitulo"
+              data-pt="Campo Rupestre"
+              data-en="Rupestrian Grassland">Campo Rupestre</p>
+            <p class="local__descricao"
+              data-pt="Localizado na Chapada Diamantina, o município de Mucugê abriga extensas áreas de Campo Rupestre sobre afloramentos quartzíticos. A região é um centro de endemismo vegetal, com alta concentração de espécies de Chamaecrista e outros grupos de interesse do laboratório. O clima sazonal, com estação seca pronunciada, influencia a dinâmica das interações planta-animal."
+              data-en="Located in the Chapada Diamantina, the municipality of Mucugê harbors extensive areas of Rupestrian Grassland on quartzitic outcrops. The region is a center of plant endemism, with a high concentration of Chamaecrista species and other groups of interest to the laboratory. The seasonal climate, with a pronounced dry season, influences the dynamics of plant-animal interactions.">
+              Localizado na Chapada Diamantina, o município de Mucugê abriga extensas áreas de Campo Rupestre sobre afloramentos quartzíticos. A região é um centro de endemismo vegetal, com alta concentração de espécies de <em>Chamaecrista</em> e outros grupos de interesse do laboratório. O clima sazonal, com estação seca pronunciada, influencia a dinâmica das interações planta-animal.
+            </p>
+          </div>
+          <iframe class="local__mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d67434.05870340814!2d-41.417508469472885!3d-13.006133643161299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x74225f64c1be3a1%3A0x89c0be9de3eb4752!2sMucug%C3%AA%2C%20BA%2C%2046750-000!5e1!3m2!1spt-BR!2sbr!4v1792774008454!5m2!1spt-BR!2sbr"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            data-pt-label="Mapa de Mucugê, BA" data-en-label="Map of Mucugê, BA"
+            title="Mapa de Mucugê, BA">
+          </iframe>
+        </div>
+
+        <div class="galeria-local">
+          <button type="button" class="galeria-local__btn galeria-local__btn--prev"
+            data-pt-label="Fotos anteriores" data-en-label="Previous photos"
+            aria-label="Fotos anteriores">&#8249;</button>
+          <ul class="galeria-local__faixa">
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/campo.svg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+          </ul>
+          <button type="button" class="galeria-local__btn galeria-local__btn--next"
+            data-pt-label="Próximas fotos" data-en-label="Next photos"
+            aria-label="Próximas fotos">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LOCAL 5: Pentecostes - CE ────────────────────────────────── -->
+    <section class="secao" id="local-pentecostes">
+      <div class="container">
+        <div class="local__cabecalho">
+          <div>
+            <h2 class="local__titulo"
+              data-pt="Pentecostes — CE"
+              data-en="Pentecostes — CE">Pentecostes — CE</h2>
+            <p class="local__subtitulo"
+              data-pt="Caatinga"
+              data-en="Caatinga">Caatinga</p>
+            <p class="local__descricao"
+              data-pt="A Caatinga é o único bioma exclusivamente brasileiro, caracterizado pela vegetação adaptada à seca e por alta biodiversidade endêmica. Em Pentecostes, o laboratório investiga interações entre plantas com nectários extraflorais e formigas parceiras, com foco em como a sazonalidade hídrica modula a quantidade e qualidade do néctar produzido e a efetividade da defesa biótica."
+              data-en="The Caatinga is the only exclusively Brazilian biome, characterized by drought-adapted vegetation and high endemic biodiversity. In Pentecostes, the laboratory investigates interactions between plants with extrafloral nectaries and partner ants, focusing on how water seasonality modulates the quantity and quality of nectar produced and the effectiveness of biotic defense.">
+              A Caatinga é o único bioma exclusivamente brasileiro, caracterizado pela vegetação adaptada à seca e por alta biodiversidade endêmica. Em Pentecostes, o laboratório investiga interações entre plantas com nectários extraflorais e formigas parceiras, com foco em como a sazonalidade hídrica modula a quantidade e qualidade do néctar produzido e a efetividade da defesa biótica.
+            </p>
+          </div>
+          <iframe class="local__mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62150.45!2d-39.27!3d-3.80!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c1a4f0e0e0e0e0f%3A0x1234567890abcdef!2sPentecostes%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1700000000003"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            data-pt-label="Mapa de Pentecostes, CE" data-en-label="Map of Pentecostes, CE"
+            title="Mapa de Pentecostes, CE">
+          </iframe>
+        </div>
+
+        <div class="galeria-local">
+          <button type="button" class="galeria-local__btn galeria-local__btn--prev"
+            data-pt-label="Fotos anteriores" data-en-label="Previous photos"
+            aria-label="Fotos anteriores">&#8249;</button>
+          <ul class="galeria-local__faixa">
+            <li class="galeria-local__item">
+              <img class="galeria-local__foto" src="img/campo.svg" alt="EDITAR: descreva a foto" data-credito="Foto: EDITAR">
+              <p class="galeria-local__legenda" data-pt="EDITAR: legenda" data-en="EDIT: caption">EDITAR: legenda</p>
+            </li>
+          </ul>
+          <button type="button" class="galeria-local__btn galeria-local__btn--next"
+            data-pt-label="Próximas fotos" data-en-label="Next photos"
+            aria-label="Próximas fotos">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox"
+    data-pt-label="Foto ampliada" data-en-label="Enlarged photo"
+    aria-label="Foto ampliada">
+    <button type="button" class="lightbox__fechar"
+      data-pt-label="Fechar" data-en-label="Close"
+      aria-label="Fechar">&times;</button>
+    <img src="" alt="">
+    <p class="lightbox__legenda"></p>
+  </dialog>
+
+  <script>
+  (function () {
+    var janela = document.getElementById('lightbox');
+    if (!janela || typeof janela.showModal !== 'function') return;
+    var imgLb = janela.querySelector('img');
+    var legLb = janela.querySelector('.lightbox__legenda');
+    document.querySelectorAll('.galeria-local__foto').forEach(function (foto) {
+      foto.addEventListener('click', function () {
+        imgLb.src = foto.src;
+        imgLb.alt = foto.alt;
+        var item    = foto.closest('.galeria-local__item');
+        var legenda = item ? item.querySelector('.galeria-local__legenda') : null;
+        var credito = foto.getAttribute('data-credito') || '';
+        var partes  = [];
+        if (legenda && legenda.textContent.trim()) partes.push(legenda.textContent.trim());
+        if (credito) partes.push(credito.replace(/<[^>]+>/g, ''));
+        legLb.textContent = partes.join(' — ');
+        janela.showModal();
+      });
+    });
+    janela.querySelector('.lightbox__fechar').addEventListener('click', function () { janela.close(); });
+    janela.addEventListener('click', function (e) { if (e.target === janela) janela.close(); });
+  })();
+  </script>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="rodape" id="contato">
+    <div class="container rodape__grade">
+      <div>
+        <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+        <p>
+          <span data-pt="Universidade Federal do ABC (UFABC)" data-en="Federal University of ABC (UFABC)">Universidade Federal do ABC (UFABC)</span><br>
+          Alameda da Universidade, s/n, Bloco Zeta, laboratório 009<br>
+          <span data-pt="Bairro Anchieta, CEP: 09606-045" data-en="Anchieta district, ZIP: 09606-045">Bairro Anchieta, CEP: 09606-045</span><br>
+          <span data-pt="São Bernardo do Campo - SP" data-en="São Bernardo do Campo, SP, Brazil">São Bernardo do Campo - SP</span><br>
+          <a href="mailto:a.nogueira@ufabc.edu.br">a.nogueira@ufabc.edu.br</a>
+        </p>
+      </div>
+      <p class="rodape__nota">© 2026 LIPA - Laboratório de Interações Planta-Animal.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

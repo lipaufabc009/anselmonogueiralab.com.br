@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 3 | LIPA</title>
+  <meta name="description" content="Resumo do Projeto 3 do Laboratório de Interações Planta-Animal (LIPA).">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/carrossel.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ============ BARRA DO TOPO (igual à das outras páginas) ============ -->
+  <header class="topo">
+    <a class="topo__nome" href="../index.html">LIPA - Laboratório de Interações Planta-Animal</a>
+
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../equipe.html">Equipe</a></li>
+        <li><a href="../projetos.html" aria-current="page">Projetos</a></li>
+        <li><a href="../index.html#orientador">Orientador</a></li>
+        <li><a href="../publicacoes.html">Publicações</a></li>
+        <li><a href="../colaboracoes.html">Colaborações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Imagens na metade esquerda (passam uma por vez), texto na metade direita -->
+    <section class="hero hero--inversa">
+
+      <div class="midia carrossel" role="region" aria-roledescription="carrossel" aria-label="Fotos do projeto">
+        <!-- EDITAR: uma linha <img> para cada foto (a primeira mantém "is-ativo").
+             Troque "projeto.svg" pelo nome da foto na pasta img e descreva a imagem no "alt".
+             Para mais fotos, copie uma linha; para menos, apague. O "../" é necessário. -->
+        <img class="carrossel__img is-ativo" src="../img/projeto.svg" alt="EDITAR: descreva a foto 1">
+        <img class="carrossel__img" src="../img/projeto.svg" alt="EDITAR: descreva a foto 2">
+        <img class="carrossel__img" src="../img/projeto.svg" alt="EDITAR: descreva a foto 3">
+
+        <div class="carrossel__controles">
+          <button type="button" class="carrossel__btn" data-dir="-1" aria-label="Foto anterior">&#8249;</button>
+          <span class="carrossel__contador" aria-live="polite">1 / 3</span>
+          <button type="button" class="carrossel__btn" data-dir="1" aria-label="Próxima foto">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="hero__bloco">
+
+        <p class="voltar"><a href="../projetos.html">← Voltar para Projetos</a></p>
+
+        <!-- EDITAR: título do projeto -->
+        <h1>Projeto 3. Título do projeto</h1>
+
+        <!-- EDITAR: número do processo e agência de fomento -->
+        <p class="projeto__processo">Processo nº 0000/00000-0 - Agência de fomento</p>
+
+        <!-- EDITAR: resumo do projeto. Para mais parágrafos, copie as linhas <p> e </p>. -->
+        <p>
+          Escreva aqui o resumo do projeto: qual é o problema ou a pergunta de pesquisa,
+          quais métodos são usados e por que isso é importante.
+        </p>
+        <p>
+          Segundo parágrafo, se quiser: resultados esperados, grupos estudados ou
+          parcerias envolvidas.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+  <!-- ============ RODAPÉ / CONTATO (igual ao das outras páginas) ============ -->
+  <footer class="rodape" id="contato">
+    <div class="container rodape__grade">
+      <div>
+        <h2>Contato</h2>
+        <p>
+          Universidade Federal do ABC (UFABC)<br>
+          Alameda da Universidade, s/n, Bloco Zeta, laboratório 009<br>
+          Bairro Anchieta, CEP: 09606-045<br>
+          São Bernardo do Campo - SP<br>
+          <a href="mailto:a.nogueira@ufabc.edu.br">a.nogueira@ufabc.edu.br</a>
+        </p>
+      </div>
+      <p class="rodape__nota">© 2026 LIPA - Laboratório de Interações Planta-Animal.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

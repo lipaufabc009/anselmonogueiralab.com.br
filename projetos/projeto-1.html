@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  data-titulo-pt="Projeto 1 | LIPA"
+  data-titulo-en="Project 1 | LIPA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto 1 | LIPA</title>
+  <meta name="description" content="Resumo do Projeto 1 do Laboratório de Interações Planta-Animal (LIPA).">
+  <script src="../js/acesso.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/carrossel.js" defer></script>
+  <script src="../js/cabecalho.js" defer></script>
+  <script src="../js/idioma.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo" data-pt="Ir para o conteúdo" data-en="Skip to content">Ir para o conteúdo</a>
+
+  <header class="topo topo--compacto">
+    <a class="topo__nome" href="../index.html">LIPA - Laboratório de Interações Planta-Animal</a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="../index.html" data-pt="Home" data-en="Home">Home</a></li>
+        <li><a href="../equipe.html" data-pt="Equipe" data-en="Team">Equipe</a></li>
+        <li><a href="../projetos.html" aria-current="page" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+        <li><a href="../publicacoes.html" data-pt="Publicações" data-en="Publications">Publicações</a></li>
+        <li><a href="../locais-de-estudo.html" data-pt="Locais de Estudo" data-en="Study Sites">Locais de Estudo</a></li>
+        <li><a href="../lipa-por-ai.html"    data-pt="LIPA por Aí"        data-en="LIPA Out There">LIPA por Aí</a></li>
+        <li><a href="../links-uteis.html" data-pt="Links úteis" data-en="Useful links">Links úteis</a></li>
+        <li><a href="../contato.html" data-pt="Contato" data-en="Contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero--inversa">
+
+      <div class="midia carrossel" role="region" aria-roledescription="carrossel"
+        data-pt-label="Fotos do projeto"
+        data-en-label="Project photos"
+        aria-label="Fotos do projeto">
+        <img class="carrossel__img is-ativo" src="../img/projeto.svg" alt="EDITAR: descreva a foto 1">
+        <img class="carrossel__img" src="../img/projeto.svg" alt="EDITAR: descreva a foto 2">
+        <img class="carrossel__img" src="../img/projeto.svg" alt="EDITAR: descreva a foto 3">
+        <div class="carrossel__controles">
+          <button type="button" class="carrossel__btn" data-dir="-1"
+            data-pt-label="Foto anterior" data-en-label="Previous photo"
+            aria-label="Foto anterior">&#8249;</button>
+          <button type="button" class="carrossel__btn" data-dir="1"
+            data-pt-label="Próxima foto" data-en-label="Next photo"
+            aria-label="Próxima foto">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="hero__bloco">
+
+        <p class="voltar"><a href="../projetos.html"
+          data-pt="← Voltar para Projetos"
+          data-en="← Back to Projects">← Voltar para Projetos</a></p>
+
+        <h1 data-pt="Projeto 1. Título do projeto" data-en="Project 1. Project title">
+          Projeto 1. Título do projeto
+        </h1>
+
+        <p class="projeto__processo"
+          data-pt="Processo nº 0000/00000-0 - Agência de fomento"
+          data-en="Grant nº 0000/00000-0 - Funding agency">
+          Processo nº 0000/00000-0 - Agência de fomento
+        </p>
+
+        <p data-pt="Escreva aqui o resumo do projeto: qual é o problema ou a pergunta de pesquisa, quais métodos são usados e por que isso é importante."
+           data-en="Write the project summary here: what is the research problem or question, which methods are used and why this is important.">
+          Escreva aqui o resumo do projeto: qual é o problema ou a pergunta de pesquisa,
+          quais métodos são usados e por que isso é importante.
+        </p>
+        <p data-pt="Segundo parágrafo, se quiser: resultados esperados, grupos estudados ou parcerias envolvidas."
+           data-en="Second paragraph, if needed: expected results, groups studied or partnerships involved.">
+          Segundo parágrafo, se quiser: resultados esperados, grupos estudados ou parcerias envolvidas.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

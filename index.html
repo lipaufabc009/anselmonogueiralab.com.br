@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  data-titulo-pt="LIPA | Universidade Federal do ABC"
+  data-titulo-en="LIPA | Federal University of ABC">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIPA | Universidade Federal do ABC</title>
+  <meta name="description" content="Laboratório de Interações Planta-Animal. Conheça nossa equipe, projetos e publicações.">
+  <script src="js/acesso.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/carrossel.js" defer></script>
+  <script src="js/cabecalho.js" defer></script>
+  <script src="js/galeria-local.js" defer></script>
+  <script src="js/credito-foto.js" defer></script>
+  <script src="js/idioma.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo"
+    data-pt="Ir para o conteúdo"
+    data-en="Skip to content">Ir para o conteúdo</a>
+
+  <!-- ============ BARRA DO TOPO ============ -->
+  <header class="topo">
+    <a class="topo__nome" href="index.html">LIPA - Laboratório de Interações Planta-Animal</a>
+
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="index.html" aria-current="page" data-pt="Home" data-en="Home">Home</a></li>
+        <li><a href="equipe.html" data-pt="Equipe" data-en="Team">Equipe</a></li>
+        <li><a href="projetos.html" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+        <li><a href="publicacoes.html" data-pt="Publicações" data-en="Publications">Publicações</a></li>
+        <li><a href="locais-de-estudo.html" data-pt="Locais de Estudo" data-en="Study Sites">Locais de Estudo</a></li>
+        <li><a href="lipa-por-ai.html"      data-pt="LIPA por Aí"        data-en="LIPA Out There">LIPA por Aí</a></li>
+        <li><a href="links-uteis.html" data-pt="Links úteis" data-en="Useful links">Links úteis</a></li>
+        <li><a href="contato.html" data-pt="Contato" data-en="Contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ CONTEÚDO PRINCIPAL ============ -->
+  <main id="conteudo">
+
+    <!-- Destaque -->
+    <section class="hero">
+      <div class="hero__bloco">
+        <h1 data-pt="Laboratório de Interações Planta-Animal (LIPA)"
+            data-en="Plant-Animal Interactions Laboratory (LIPA)">
+          Laboratório de Interações Planta-Animal (LIPA)
+        </h1>
+        <p class="hero__texto"
+          data-pt="Uma frase curta sobre o foco de pesquisa. Exemplo: estudamos como plantas e animais interagem e de que forma essas relações moldam os ecossistemas."
+          data-en="A short phrase about the research focus. Example: we study how plants and animals interact and how these relationships shape ecosystems.">
+          Uma frase curta sobre o foco de pesquisa. Exemplo: estudamos como plantas
+          e animais interagem e de que forma essas relações moldam os ecossistemas.
+        </p>
+      </div>
+      <div class="midia carrossel" role="region" aria-roledescription="carrossel"
+        data-pt-label="Fotos do laboratório"
+        data-en-label="Laboratory photos"
+        aria-label="Fotos do laboratório">
+        <!-- EDITAR: em data-credito coloque "Foto: Nome Sobrenome" ou "© Nome Sobrenome".
+             Remova o atributo data-credito se a foto não tiver crédito específico. -->
+        <img class="carrossel__img is-ativo" src="img/c-debilis.jpeg" alt="Descreva aqui o que a imagem mostra" data-credito="Foto: EDITAR">
+        <img class="carrossel__img" src="img/c-ramosa.jpeg" alt="EDITAR: descreva a foto 2" data-credito="Foto: EDITAR">
+        <img class="carrossel__img" src="img/formiga-nictitans.JPG" alt="EDITAR: descreva a foto 3" data-credito="Foto: EDITAR">
+        <img class="carrossel__img" src="img/formiga-decora2.jpeg" alt="EDITAR: descreva a foto 4" data-credito="Foto: EDITAR">
+        <img class="carrossel__img" src="img/c-nictitans.jpeg" alt="EDITAR: descreva a foto 5" data-credito="Foto: EDITAR">
+        <img class="carrossel__img" src="img/rizobio.jpeg" alt="EDITAR: descreva a foto 6" data-credito="Foto: EDITAR">
+        <img class="carrossel__img" src="img/c-desvauxii.jpeg" alt="EDITAR: descreva a foto 7" data-credito="Foto: EDITAR">
+
+        <div class="carrossel__controles">
+          <button type="button" class="carrossel__btn" data-dir="-1"
+            data-pt-label="Foto anterior" data-en-label="Previous photo"
+            aria-label="Foto anterior">&#8249;</button>
+          <button type="button" class="carrossel__btn" data-dir="1"
+            data-pt-label="Próxima foto" data-en-label="Next photo"
+            aria-label="Próxima foto">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linhas de pesquisa -->
+    <section class="secao" id="pesquisa">
+      <div class="container">
+        <div class="secao__topo">
+          <h2 data-pt="Linhas de pesquisa" data-en="Research lines">Linhas de pesquisa</h2>
+          <p data-pt="Clique no nome para ver as publicações de cada linha."
+             data-en="Click on the name to see the publications for each research line.">
+            Clique no nome para ver as publicações de cada linha.
+          </p>
+        </div>
+
+        <!--
+          COMO ADICIONAR UMA LINHA: copie um bloco <li class="linha-card"> inteiro e
+          cole dentro do <ul>. As setas aparecem automaticamente quando há mais linhas
+          do que cabem na tela (3 por vez em desktop).
+          Em "linha=" use um código curto sem acentos; esse mesmo código deve aparecer
+          em data-linhas nas publicações dessa linha.
+        -->
+        <div class="galeria-local linhas-carrossel">
+          <button type="button" class="galeria-local__btn galeria-local__btn--prev"
+            data-pt-label="Linhas anteriores" data-en-label="Previous lines"
+            aria-label="Linhas anteriores">&#8249;</button>
+
+          <ul class="galeria-local__faixa linhas-faixa">
+
+            <li class="linha-card galeria-local__item">
+              <a class="linha-card__moldura" href="publicacoes.html?linha=defesa&amp;nome=Mutualismo%20de%20Defesa%20Planta-Formiga" tabindex="-1" aria-hidden="true">
+                <img class="linha-card__foto" src="img/formiga-nictitans-zoom.JPG" alt="Mutualismo de Defesa Planta-Formiga">
+              </a>
+              <h3 class="linha-card__titulo">
+                <a href="publicacoes.html?linha=defesa&amp;nome=Mutualismo%20de%20Defesa%20Planta-Formiga"
+                  data-pt="Mutualismo de Defesa Planta-Formiga"
+                  data-en="Plant-Ant Defense Mutualism">
+                  Mutualismo de Defesa Planta-Formiga</a>
+              </h3>
+              <p data-pt="Plantas oferecem néctar extrafloral ou abrigo às formigas, que em troca as protegem contra herbívoros. Investigamos como esse mutualismo responde às condições do ambiente."
+                 data-en="Plants offer extrafloral nectar or shelter to ants, which in return protect them from herbivores. We investigate how this mutualism responds to environmental conditions.">
+                Plantas oferecem néctar extrafloral ou abrigo às formigas, que em troca as protegem contra herbívoros. Investigamos como esse mutualismo responde às condições do ambiente.
+              </p>
+            </li>
+
+            <li class="linha-card galeria-local__item">
+              <a class="linha-card__moldura" href="publicacoes.html?linha=polinizacao&amp;nome=Mutualismo%20de%20Poliniza%C3%A7%C3%A3o%20Planta-Abelha" tabindex="-1" aria-hidden="true">
+                <img class="linha-card__foto" src="img/c-debilis-zoom.jpeg" alt="Mutualismo de Polinização Planta-Abelha">
+              </a>
+              <h3 class="linha-card__titulo">
+                <a href="publicacoes.html?linha=polinizacao&amp;nome=Mutualismo%20de%20Poliniza%C3%A7%C3%A3o%20Planta-Abelha"
+                  data-pt="Mutualismo de Polinização Planta-Abelha"
+                  data-en="Plant-Bee Pollination Mutualism">
+                  Mutualismo de Polinização Planta-Abelha</a>
+              </h3>
+              <p data-pt="Abelhas coletam néctar e pólen e, ao visitar as flores, garantem a reprodução das plantas. Estudamos como as plantas atraem e recompensam as abelhas."
+                 data-en="Bees collect nectar and pollen and, by visiting flowers, ensure plant reproduction. We study how plants attract and reward bees.">
+                Abelhas coletam néctar e pólen e, ao visitar as flores, garantem a reprodução das plantas. Estudamos como as plantas atraem e recompensam as abelhas.
+              </p>
+            </li>
+
+            <li class="linha-card galeria-local__item">
+              <a class="linha-card__moldura" href="publicacoes.html?linha=nutricao&amp;nome=Mutualismo%20de%20Nutri%C3%A7%C3%A3o%20Planta-Bact%C3%A9ria" tabindex="-1" aria-hidden="true">
+                <img class="linha-card__foto" src="img/rizobio-zoom.jpeg" alt="Mutualismo de Nutrição Planta-Bactéria">
+              </a>
+              <h3 class="linha-card__titulo">
+                <a href="publicacoes.html?linha=nutricao&amp;nome=Mutualismo%20de%20Nutri%C3%A7%C3%A3o%20Planta-Bact%C3%A9ria"
+                  data-pt="Mutualismo de Nutrição Planta-Bactéria"
+                  data-en="Plant-Bacteria Nutrition Mutualism">
+                  Mutualismo de Nutrição Planta-Bactéria</a>
+              </h3>
+              <p data-pt="Bactérias associadas às plantas ajudam na obtenção de nutrientes, como o nitrogênio, em troca de carboidratos e abrigo. Investigamos como essa associação contribui para o desenvolvimento das plantas."
+                 data-en="Bacteria associated with plants help obtain nutrients, such as nitrogen, in exchange for carbohydrates and shelter. We investigate how this association contributes to plant development.">
+                Bactérias associadas às plantas ajudam na obtenção de nutrientes, como o nitrogênio, em troca de carboidratos e abrigo. Investigamos como essa associação contribui para o desenvolvimento das plantas.
+              </p>
+            </li>
+
+            <li class="linha-card galeria-local__item">
+              <a class="linha-card__moldura" href="publicacoes.html?linha=macroevolucao&amp;nome=Macroevolu%C3%A7%C3%A3o" tabindex="-1" aria-hidden="true">
+                <!-- EDITAR: troque "projeto.svg" pela foto da linha de macroevolução -->
+                <img class="linha-card__foto" src="img/projeto.svg" alt="Macroevolução">
+              </a>
+              <h3 class="linha-card__titulo">
+                <a href="publicacoes.html?linha=macroevolucao&amp;nome=Macroevolu%C3%A7%C3%A3o"
+                  data-pt="Macroevolução"
+                  data-en="Macroevolution">
+                  Macroevolução</a>
+              </h3>
+              <p data-pt="Investigamos como as interações planta-animal moldaram a diversificação de linhagens ao longo do tempo evolutivo, integrando dados filogenéticos, de história de vida e de ecologia funcional."
+                 data-en="We investigate how plant-animal interactions have shaped the diversification of lineages over evolutionary time, integrating phylogenetic, life-history and functional ecology data.">
+                Investigamos como as interações planta-animal moldaram a diversificação de linhagens ao longo do tempo evolutivo, integrando dados filogenéticos, de história de vida e de ecologia funcional.
+              </p>
+            </li>
+
+          </ul>
+
+          <button type="button" class="galeria-local__btn galeria-local__btn--next"
+            data-pt-label="Próximas linhas" data-en-label="Next lines"
+            aria-label="Próximas linhas">&#8250;</button>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Orientador -->
+    <section class="orientador" id="orientador">
+      <div class="midia">
+        <img src="img/Orientador.jpeg" alt="Foto do orientador">
+      </div>
+
+      <div class="orientador__bloco">
+        <h2>Prof. Dr. Anselmo Nogueira</h2>
+        <p class="orientador__cargo"
+          data-pt="Professor Adjunto na Universidade Federal do ABC (UFABC)"
+          data-en="Adjunct Professor at the Federal University of ABC (UFABC)">
+          Professor Adjunto na Universidade Federal do ABC (UFABC)
+        </p>
+
+        <ul class="dados">
+          <li data-pt="Pós-Doutorado — University of Arizona, EUA (2015–2016)"
+              data-en="Postdoctoral fellow — University of Arizona, USA (2015–2016)">
+            Pós-Doutorado — University of Arizona, EUA (2015–2016)
+          </li>
+          <li data-pt="Pós-Doutorado — Instituto de Biociências, USP, Brasil (2012–2015)"
+              data-en="Postdoctoral fellow — Institute of Biosciences, USP, Brazil (2012–2015)">
+            Pós-Doutorado — Instituto de Biociências, USP, Brasil (2012–2015)
+          </li>
+          <li data-pt="Doutorado em Ciências Biológicas (Botânica) — USP (2007–2011)"
+              data-en="PhD in Biological Sciences (Botany) — USP (2007–2011)">
+            Doutorado em Ciências Biológicas (Botânica) — USP (2007–2011)
+          </li>
+          <li data-pt="Mestrado em Biologia (Ecologia) — INPA (2004–2006)"
+              data-en="Master's in Biology (Ecology) — INPA (2004–2006)">
+            Mestrado em Biologia (Ecologia) — INPA (2004–2006)
+          </li>
+          <li data-pt="Graduação em Ciências Biológicas — USP (1999–2002)"
+              data-en="Undergraduate in Biological Sciences — USP (1999–2002)">
+            Graduação em Ciências Biológicas — USP (1999–2002)
+          </li>
+        </ul>
+
+        <ul class="links">
+          <li><a class="botao botao--contorno" href="https://www.ufabc.edu.br/ensino/docentes/anselmo-nogueira" target="_blank" rel="noopener"
+            data-pt="Docente UFABC" data-en="UFABC Faculty page">Docente UFABC</a></li>
+          <li><a class="botao botao--contorno" href="http://lattes.cnpq.br/9192761727785856" target="_blank" rel="noopener"
+            data-pt="Currículo Lattes" data-en="Lattes CV">Currículo Lattes</a></li>
+          <li><a class="botao botao--contorno" href="https://www.scopus.com/authid/detail.uri?authorId=42662135600" target="_blank" rel="noopener">Scopus</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="rodape" id="contato">
+    <div class="container rodape__grade">
+      <div>
+        <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+        <p>
+          <span data-pt="Universidade Federal do ABC (UFABC)" data-en="Federal University of ABC (UFABC)">Universidade Federal do ABC (UFABC)</span><br>
+          Alameda da Universidade, s/n, Bloco Zeta, laboratório 009<br>
+          <span data-pt="Bairro Anchieta, CEP: 09606-045" data-en="Anchieta district, ZIP: 09606-045">Bairro Anchieta, CEP: 09606-045</span><br>
+          <span data-pt="São Bernardo do Campo - SP" data-en="São Bernardo do Campo, SP, Brazil">São Bernardo do Campo - SP</span><br>
+          <a href="mailto:a.nogueira@ufabc.edu.br">a.nogueira@ufabc.edu.br</a>
+        </p>
+      </div>
+      <p class="rodape__nota">© 2026 LIPA - Laboratório de Interações Planta-Animal.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

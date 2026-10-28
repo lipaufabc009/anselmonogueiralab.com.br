@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIPA — Acesso restrito</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2f4a3b;
+      font-family: Georgia, 'Times New Roman', serif;
+      padding: 1.5rem;
+    }
+
+    .caixa {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2.5rem 2.25rem 2rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    .caixa__titulo {
+      font-size: 1.5rem;
+      color: #2f4a3b;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.01em;
+    }
+
+    .caixa__subtitulo {
+      font-size: 0.9rem;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2f4a3b;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      margin-bottom: 0.5rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    input[type="password"]:focus { border-color: #2f4a3b; }
+    input[type="password"].erro  { border-color: #c0392b; }
+
+    .msg-erro {
+      font-size: 0.82rem;
+      color: #c0392b;
+      margin-bottom: 0.75rem;
+      min-height: 1.2em;
+      text-align: left;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background: #2f4a3b;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.25rem;
+    }
+    button:hover { background: #1e2b24; }
+  </style>
+</head>
+<body>
+  <div class="caixa">
+    <h1 class="caixa__titulo">LIPA</h1>
+    <p class="caixa__subtitulo">Laboratório de Interações Planta-Animal</p>
+
+    <label for="campo-senha">Senha de acesso</label>
+    <input type="password" id="campo-senha" autocomplete="current-password" placeholder="••••••••">
+    <p class="msg-erro" id="msg-erro" aria-live="polite"></p>
+    <button type="button" id="btn-entrar">Entrar</button>
+  </div>
+
+  <script>
+    var SENHA = 'lipa.009';
+    var CHAVE = 'lipa-acesso';
+
+    // Se já tem acesso liberado, vai direto para a home
+    if (sessionStorage.getItem(CHAVE) === '1') {
+      location.replace('index.html');
+    }
+
+    var campo = document.getElementById('campo-senha');
+    var btn   = document.getElementById('btn-entrar');
+    var msg   = document.getElementById('msg-erro');
+
+    function tentar() {
+      if (campo.value === SENHA) {
+        sessionStorage.setItem(CHAVE, '1');
+        location.replace('index.html');
+      } else {
+        msg.textContent = 'Senha incorreta. Tente novamente.';
+        campo.classList.add('erro');
+        campo.value = '';
+        campo.focus();
+      }
+    }
+
+    btn.addEventListener('click', tentar);
+    campo.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') tentar();
+      campo.classList.remove('erro');
+      msg.textContent = '';
+    });
+  </script>
+</body>
+</html>

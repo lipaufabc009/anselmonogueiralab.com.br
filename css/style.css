@@ -1,0 +1,1629 @@
+/* ==========================================================
+   Paleta em verde pastel escuro.
+   Para mudar as cores do site inteiro, edite só estas variáveis.
+   ========================================================== */
+:root {
+  --papel: #F8F9F3;        /* fundo da página */
+  --tinta: #1E2B24;        /* cor do texto */
+  --verde: #4A6B58;        /* verde pastel escuro: barra do topo e botões */
+  --verde-escuro: #2F4A3B; /* rodapé e efeito ao passar o mouse */
+  --verde-claro: #DDE7D9;  /* fundos suaves (orientador, imagens) */
+  --linha: #C9D6C6;
+  --destaque: #B7791F;     /* contorno ao navegar pelo teclado */
+
+  /* Margem lateral padrão: o mesmo valor alinha topo, textos e rodapé */
+  --margem: clamp(1.25rem, 5vw, 4rem);
+
+  /* Fontes do sistema: funcionam offline, sem baixar nada */
+  --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font: 1.0rem/1.5 var(--serif);
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.01em; max-width: 25ch; }
+h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+
+p { margin: 0 0 1rem; max-width: 62ch; }
+
+a { color: var(--verde-escuro); }
+
+:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+.container { padding-inline: var(--margem); }
+
+/* Link "ir para o conteúdo" (acessibilidade) */
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--tinta);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 10;
+}
+.pular:focus { top: 1rem; }
+
+/* ---------- Barra do topo ---------- */
+.topo {
+  background: var(--verde);
+  color: #fff;
+}
+
+.topo :focus-visible { outline-color: #fff; }
+
+.topo__nome {
+  display: block;
+  padding: 1.25rem var(--margem) 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+  line-height: 1.2;
+}
+
+/* Itens do menu distribuídos por toda a largura da barra */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.7rem var(--margem);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-block: 0.35rem;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover { border-bottom-color: rgba(255, 255, 255, 0.6); }
+.menu a[aria-current="page"] { border-bottom-color: #fff; }
+
+/* ---------- Destaque e Orientador: duas metades ---------- */
+.hero,
+.orientador {
+  display: grid; /* em telas pequenas, uma coluna só */
+}
+
+.hero__bloco {
+  padding: clamp(2.5rem, 6vw, 5rem) var(--margem);
+  align-self: center;
+}
+
+.hero__texto {
+  font-size: 1.2rem;
+  max-width: 48ch;
+  margin-bottom: 1.75rem;
+}
+
+/* Caixa da imagem: a foto preenche toda a metade da página */
+.midia {
+  position: relative;
+  min-height: 18rem;
+  background: var(--verde-claro);
+}
+
+.midia img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* corta as bordas em vez de deformar */
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  background: var(--verde);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.botao:hover { background: var(--verde-escuro); }
+
+/* Botão só com contorno (links do orientador) */
+.botao--contorno {
+  background: transparent;
+  color: var(--verde-escuro);
+  border: 2px solid var(--verde);
+  padding: 0.6rem 1.25rem;
+}
+.botao--contorno:hover {
+  background: var(--verde);
+  color: #fff;
+}
+
+/* ---------- Seções comuns ---------- */
+.secao {
+  padding-block: 4rem;
+  border-top: 1px solid var(--linha);
+}
+
+.secao__grade {
+  display: grid;
+  gap: 1.5rem 3rem;
+}
+
+.linhas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linhas li {
+  padding: 0 0 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--verde);
+}
+.linhas li:last-child { margin-bottom: 0; padding-bottom: 0; }
+.linhas p { margin: 0; }
+
+/* ---------- Orientador (seção grande) ---------- */
+.orientador {
+  background: var(--verde-claro);
+  border-top: 1px solid var(--linha);
+}
+
+.orientador__bloco {
+  padding: clamp(2.5rem, 6vw, 5rem) var(--margem);
+  align-self: center;
+}
+
+.orientador h2 {
+  font-size: clamp(1.8rem, 3.7vw, 2.4rem);
+  margin-bottom: 0.35rem;
+}
+
+.orientador__cargo {
+  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.dados {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dados li {
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(47, 74, 59, 0.22);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background: var(--verde-escuro);
+  color: #E6EEE3;
+  padding-block: 3rem;
+}
+
+.rodape a { color: #fff; }
+
+.rodape__grade {
+  display: grid;
+  gap: 2rem;
+}
+
+.rodape__nota {
+  font-size: 0.9rem;
+  color: #B9C9B8;
+  margin: 0;
+  align-self: end;
+}
+
+/* ---------- Telas maiores (computador): as duas metades lado a lado ---------- */
+@media (min-width: 52rem) {
+  .hero,
+  .orientador { grid-template-columns: 1fr 1fr; }
+
+  .hero .midia { min-height: 32rem; }
+  .orientador .midia { min-height: 40rem; }
+
+  .hero__bloco { padding-right: clamp(1.5rem, 4vw, 3rem); }
+  .orientador__bloco { padding-left: clamp(2rem, 5vw, 4.5rem); }
+
+  .secao__grade { grid-template-columns: 1fr 2fr; }
+  .rodape__grade { grid-template-columns: 1fr 1fr; }
+  .rodape__nota { justify-self: end; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+/* ---------- Página Equipe e páginas individuais ---------- */
+
+/* Texto visível só para leitores de tela (título da página) */
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.titulo-secao {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Linha de cima de cada seção: título à esquerda, frase à direita */
+.secao__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 3rem;
+  margin-bottom: 2rem;
+}
+.secao__topo p { margin: 0; max-width: 40ch; font-style: italic; }
+@media (min-width: 52rem) { .secao__topo p { text-align: right; } }
+
+/* Perfil: foto de um lado, texto do outro (pesquisador principal e páginas individuais) */
+.perfil {
+  display: grid;
+  gap: 2rem 3rem;
+  align-items: center;
+}
+.perfil__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--verde-claro);
+  border-radius: 4px;
+}
+.perfil__nome {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+.perfil__cargo { font-style: italic; margin-bottom: 1.25rem; }
+.perfil .links { margin-top: 1.25rem; }
+@media (min-width: 52rem) { .perfil { grid-template-columns: 1fr 1fr; } }
+
+/* Grade de alunos e colaboradores: as colunas se ajustam sozinhas à tela */
+.membros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 2.25rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.membro__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  background: var(--verde-claro);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.membro h3 { margin-bottom: 0.25rem; }
+.membro h3 a {
+  color: var(--verde-escuro);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.membro h3 a:hover { text-decoration-thickness: 2px; }
+.membro p { margin: 0; font-size: 0.95rem; font-style: italic; }
+
+.voltar { margin-bottom: 1.5rem; }
+
+/* ---------- Zoom ao passar o mouse na foto (página Equipe) ---------- */
+.membro__moldura {
+  display: block;
+  overflow: hidden; /* esconde o que passa da borda quando a foto aumenta */
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  background: var(--verde-claro);
+}
+.membro__moldura .membro__foto {
+  margin: 0;
+  border-radius: 0;
+  transition: transform 0.4s ease;
+}
+.membro__moldura:hover .membro__foto { transform: scale(1.07); }
+
+@media (prefers-reduced-motion: reduce) {
+  .membro__moldura .membro__foto { transition: none; }
+}
+
+/* ---------- Página individual do aluno ---------- */
+.voltar { margin-bottom: 1.5rem; }
+.aluno__info { font-style: italic; margin-bottom: 1.25rem; }
+.aluno__projeto { margin-bottom: 1rem; }
+
+/* ---------- Página Projetos: 3 por fileira, com zoom na imagem ---------- */
+.projetos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 36rem) { .projetos { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 52rem) { .projetos { grid-template-columns: repeat(3, 1fr); } }
+
+.projeto__moldura {
+  display: block;
+  overflow: hidden; /* esconde o que passa da borda quando a imagem aumenta */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background: var(--verde-claro);
+}
+.projeto__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.projeto__moldura:hover .projeto__foto { transform: scale(1.07); }
+
+.projeto h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.projeto h3 a {
+  color: var(--verde-escuro);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.projeto h3 a:hover { text-decoration-thickness: 2px; }
+.projeto p { margin: 0; font-size: 0.95rem; font-style: italic; }
+
+/* ---------- Página individual do projeto ---------- */
+.projeto__processo { font-style: italic; font-size: 1.1rem; margin-bottom: 1.25rem; }
+
+/* Versão invertida do destaque: imagens à esquerda, texto à direita */
+@media (min-width: 52rem) {
+  .hero--inversa .hero__bloco {
+    padding-left: clamp(1.5rem, 4vw, 3rem);
+    padding-right: var(--margem);
+  }
+}
+
+/* ---------- Carrossel de fotos (uma por vez) ---------- */
+.carrossel .carrossel__img {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.carrossel .carrossel__img.is-ativo { opacity: 1; }
+
+/* Os botões só aparecem quando o JavaScript está funcionando */
+.carrossel__controles {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  align-items: center;
+  gap: 0.5rem;
+}
+.carrossel--ativo .carrossel__controles { display: flex; }
+
+.carrossel__btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(30, 43, 36, 0.75);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.carrossel__btn:hover { background: var(--verde-escuro); }
+
+.carrossel__contador {
+  background: rgba(30, 43, 36, 0.75);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projeto__foto,
+  .carrossel .carrossel__img { transition: none; }
+}
+
+/* ---------- Carrossel: sem contador e sem círculo escuro, só as setas ---------- */
+.carrossel__contador { display: none; }
+
+.carrossel__btn {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  font-size: 3rem;
+  /* sombra para a seta continuar visível sobre fotos claras */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 0 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+.carrossel__btn:hover {
+  background: transparent;
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrossel__btn { transition: none; }
+}
+
+/* ---------- Publicações ---------- */
+.filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.filtros button {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--verde);
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--verde-escuro);
+  cursor: pointer;
+}
+.filtros button:hover { background: var(--verde-claro); }
+.filtros button[aria-pressed="true"] { background: var(--verde); color: #fff; }
+
+.publicacoes { list-style: none; margin: 0; padding: 0; }
+.publicacoes li {
+  display: grid;
+  gap: 0.25rem 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--linha);
+}
+.publicacoes li[hidden] { display: none; }
+@media (min-width: 36rem) { .publicacoes li { grid-template-columns: 5rem 1fr; } }
+.publicacao__ano { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--verde); }
+.publicacoes p { margin: 0 0 0.4rem; max-width: 70ch; }
+
+/* ---------- Campo & Plantas (galeria) ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 2rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.galeria__item {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--verde-claro);
+  margin-bottom: 0.6rem;
+}
+.galeria__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.galeria__item:hover .galeria__foto { transform: scale(1.07); }
+.galeria p { margin: 0; font-size: 0.95rem; font-style: italic; }
+
+/* Foto ampliada */
+.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(92vw, 70rem);
+  max-height: 94vh;
+  overflow: visible;
+}
+.lightbox::backdrop { background: rgba(20, 30, 25, 0.88); }
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.lightbox__legenda { color: #fff; text-align: center; margin: 0.75rem auto 0; font-style: italic; }
+.lightbox__fechar {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 2.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---------- Links úteis ---------- */
+.recursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.recursos li { border-top: 3px solid var(--verde); padding-top: 0.75rem; }
+.recursos a {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+}
+.recursos p { margin: 0.25rem 0 0; font-size: 0.95rem; font-style: italic; }
+
+/* ---------- Contato ---------- */
+.contato { display: grid; gap: 2.5rem 4rem; }
+@media (min-width: 52rem) { .contato { grid-template-columns: 1fr 1.3fr; } }
+
+.formulario { display: grid; gap: 0.4rem; }
+.formulario label { font-weight: 600; margin-top: 0.8rem; }
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #6F8A78;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--tinta);
+}
+.formulario textarea { resize: vertical; }
+.formulario button {
+  justify-self: start;
+  margin-top: 1.25rem;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria__foto { transition: none; }
+}
+
+/* ---------- Texto justificado (páginas dos alunos) ---------- */
+.justificado { text-align: justify; hyphens: auto; }
+
+/* ---------- Painel de fotos (2 ou 4) ---------- */
+.painel { background: var(--papel); }
+.painel--4 { min-height: 24rem; }
+.painel img { inset: auto; width: calc(50% - 0.2rem); }
+
+.painel--2 img { top: 0; height: 100%; }
+.painel--2 img:nth-child(1) { left: 0; }
+.painel--2 img:nth-child(2) { right: 0; }
+
+.painel--4 img { height: calc(50% - 0.2rem); }
+.painel--4 img:nth-child(1) { top: 0; left: 0; }
+.painel--4 img:nth-child(2) { top: 0; right: 0; }
+.painel--4 img:nth-child(3) { bottom: 0; left: 0; }
+.painel--4 img:nth-child(4) { bottom: 0; right: 0; }
+
+/* ---------- Linhas de pesquisa na Home ---------- */
+.linha .projeto__foto { aspect-ratio: 3 / 2; }
+.linha p { font-style: normal; font-size: 1rem; }
+
+/* ---------- Aviso de filtro na página Publicações ---------- */
+.filtro-ativo {
+  background: var(--verde-claro);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  max-width: none;
+}
+.filtro-ativo a { margin-left: 0.75rem; }
+
+/* ---------- Publicações: filtros em lista, figura e botões de cada artigo ---------- */
+.filtros[hidden] { display: none; }
+.filtros { align-items: flex-end; gap: 1rem 1.5rem; margin-bottom: 1.25rem; }
+.filtro { display: grid; gap: 0.3rem; }
+.filtro label { font-weight: 600; font-size: 0.9rem; }
+.filtro select {
+  font: inherit;
+  min-width: 12rem;
+  max-width: 100%;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #6F8A78;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--tinta);
+}
+.filtros__limpar { padding: 0.55rem 1.1rem; }
+.filtro-contador { margin: 0 0 1rem; font-size: 0.95rem; font-style: italic; }
+
+.secao__topo .aviso { max-width: 58ch; font-size: 0.95rem; }
+
+.publicacao__corpo { display: grid; gap: 1rem 1.75rem; align-items: start; }
+.publicacao__imagem {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--verde-claro);
+  border-radius: 4px;
+}
+@media (min-width: 52rem) {
+  .publicacao__corpo { grid-template-columns: 14rem 1fr; }
+  .publicacao__imagem { max-width: none; }
+}
+
+.publicacao__acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem; }
+.publicacao__acoes .botao {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+  border: 2px solid var(--verde);
+}
+.publicacao__acoes .botao:hover { border-color: var(--verde-escuro); }
+
+/* ---------- Barra do topo fixa: o menu some ao descer e volta ao subir ---------- */
+html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondidos sob a barra */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: transparent;
+  pointer-events: none; /* a área vazia deixada pelo menu escondido não bloqueia cliques */
+}
+.topo > * { pointer-events: auto; }
+
+.topo__nome {
+  position: relative;
+  z-index: 2;
+  background: var(--verde);
+}
+
+.topo nav {
+  position: relative;
+  z-index: 1;
+  background: var(--verde);
+  box-shadow: 0 2px 8px rgba(30, 43, 36, 0.2);
+  transition: transform 0.3s ease; /* o menu desliza para trás da barra do nome */
+}
+.topo--recolhido nav { transform: translateY(-100%); }
+
+.pular { z-index: 30; } /* o link "ir para o conteúdo" aparece acima da barra */
+
+@media (prefers-reduced-motion: reduce) {
+  .topo nav { transition: none; }
+}
+
+/* ---------- Menu de três barras (páginas de alunos, alumni, colaboradores e projetos) ----------
+   Vale para cabeçalhos com a classe "topo--compacto". Sem JavaScript, o menu normal continua visível. */
+.menu-botao { display: none; }
+
+@media (scripting: enabled) {
+  .topo.topo--compacto {
+    display: flex;
+    align-items: center;
+    background: var(--verde);
+    pointer-events: auto;
+    /* Para a barra não ficar fixa nessas páginas, acrescente: position: static; */
+  }
+
+  .topo--compacto .topo__nome {
+    flex: 1;
+    padding: 0.7rem var(--margem);
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+    background: transparent;
+  }
+
+  /* O botão de três barras */
+  .menu-botao {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 3rem;
+    height: 3rem;
+    margin-right: calc(var(--margem) - 0.75rem);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .menu-botao__barras,
+  .menu-botao__barras::before,
+  .menu-botao__barras::after {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+  .menu-botao__barras { position: relative; }
+  .menu-botao__barras::before,
+  .menu-botao__barras::after { content: ""; position: absolute; left: 0; }
+  .menu-botao__barras::before { top: -7px; }
+  .menu-botao__barras::after { top: 7px; }
+
+  /* Aberto: as três barras viram um X */
+  .menu-botao[aria-expanded="true"] .menu-botao__barras { background: transparent; }
+  .menu-botao[aria-expanded="true"] .menu-botao__barras::before { transform: translateY(7px) rotate(45deg); }
+  .menu-botao[aria-expanded="true"] .menu-botao__barras::after { transform: translateY(-7px) rotate(-45deg); }
+
+  /* O menu vira um painel que abre por cima do conteúdo, sem empurrar nada */
+  .topo--compacto nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: min(100%, 17rem);
+    box-shadow: 0 10px 24px rgba(30, 43, 36, 0.28);
+    transform: none;
+    transition: none;
+  }
+  .topo--compacto:not(.topo--aberto) nav { display: none; }
+
+  .topo--compacto .menu {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.4rem 0;
+    border-top: 0;
+  }
+  .topo--compacto .menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 0;
+  }
+  .topo--compacto .menu a:hover { background: rgba(255, 255, 255, 0.12); }
+  .topo--compacto .menu a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-botao__barras,
+  .menu-botao__barras::before,
+  .menu-botao__barras::after { transition: none; }
+}
+
+/* ── Adicionado ao style.css: botão de idioma PT / EN ── */
+
+/* Faixa que agrupa o nome do laboratório e o botão de idioma */
+.topo__faixa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--verde);
+  padding-right: var(--margem);
+}
+
+/* O nome do laboratório ocupa o espaço que sobra */
+.topo__faixa .topo__nome {
+  flex: 1;
+  padding-right: 0; /* padding lateral já vem do container pai */
+}
+
+/* Botão PT / EN */
+#btn-idioma {
+  flex: none;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  font: 600 0.78rem/1 var(--sans);
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+#btn-idioma:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* Em telas com menu compacto (páginas de alunos/projetos), o botão
+   fica entre o nome e o ícone de três barras */
+.topo--compacto .topo__faixa {
+  flex: 1;
+  padding-right: 0;
+}
+.topo--compacto .topo__faixa .topo__nome {
+  padding-right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #btn-idioma { transition: none; }
+}
+
+/* ── Adicionado ao style.css: botão de idioma PT / EN ── */
+
+/* Faixa que agrupa o nome do laboratório e o botão de idioma.
+   Precisa de position + z-index para ficar na camada correta
+   quando o nav recolhe por trás dela com translateY(-100%). */
+.topo__faixa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--verde);
+  padding-right: var(--margem);
+  position: relative;   /* cria contexto de empilhamento */
+  z-index: 2;           /* mesma camada do .topo__nome original */
+}
+
+/* O nome do laboratório ocupa o espaço que sobra */
+.topo__faixa .topo__nome {
+  flex: 1;
+  padding-right: 0;
+  /* Remove o z-index individual: agora é a faixa que empilha */
+  position: static;
+  z-index: auto;
+}
+
+/* Botão PT / EN */
+#btn-idioma {
+  flex: none;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  font: 600 0.78rem/1 var(--sans);
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+#btn-idioma:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* Em telas com menu compacto (páginas de alunos/projetos) */
+.topo--compacto .topo__faixa {
+  flex: 1;
+  padding-right: 0;
+}
+.topo--compacto .topo__faixa .topo__nome {
+  padding-right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #btn-idioma { transition: none; }
+}
+
+/* ── Adicionado ao style.css: botão de idioma PT / EN ── */
+
+/* Faixa que agrupa o nome do laboratório e o botão de idioma.
+   Precisa de position + z-index para ficar na camada correta
+   quando o nav recolhe por trás dela com translateY(-100%). */
+.topo__faixa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--verde);
+  padding-right: var(--margem);
+  position: relative;   /* cria contexto de empilhamento */
+  z-index: 2;           /* mesma camada do .topo__nome original */
+}
+
+/* O nome do laboratório ocupa o espaço que sobra */
+.topo__faixa .topo__nome {
+  flex: 1;
+  padding-right: 0;
+  /* Remove o z-index individual: agora é a faixa que empilha */
+  position: static;
+  z-index: auto;
+}
+
+/* Botão PT / EN */
+#btn-idioma {
+  flex: none;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  font: 600 0.78rem/1 var(--sans);
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+#btn-idioma:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* Em telas com menu compacto (páginas de alunos/projetos) */
+.topo--compacto .topo__faixa {
+  flex: 1;
+  padding-right: 0;
+}
+.topo--compacto .topo__faixa .topo__nome {
+  padding-right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #btn-idioma { transition: none; }
+}
+
+
+/* ── Crédito fotográfico (credito-foto.js) ───────────────────────────── */
+
+/* Wrapper criado pelo JS quando o pai é position:static */
+.credito-wrapper {
+  display: block;
+  position: relative;
+  line-height: 0; /* remove espaço extra abaixo da imagem */
+}
+
+/* Faixa que aparece na base da foto */
+.credito-faixa {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.6rem 0.4rem;
+  background: linear-gradient(to top, rgba(20, 35, 28, 0.78) 0%, transparent 100%);
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none; /* não interfere nos cliques/links da imagem */
+}
+
+/* Aparece ao passar o mouse ou focar o elemento pai */
+.credito-wrapper:hover .credito-faixa,
+.credito-wrapper:focus-within .credito-faixa {
+  opacity: 1;
+}
+
+/* Para imagens cujo pai já tem position relativo/absolute
+   (ex.: .midia, .galeria-local__item, .carrossel) */
+.midia:hover .credito-faixa,
+.galeria-local__item:hover .credito-faixa,
+.linha-card__moldura:hover .credito-faixa,
+.membro__moldura:hover .credito-faixa,
+.projeto__moldura:hover .credito-faixa,
+.galeria__item:hover .credito-faixa,
+.perfil:hover .credito-faixa {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .credito-faixa { transition: none; }
+}
+
+
+/* ════════════════════════════════════════════
+   Index
+   ════════════════════════════════════════════ */
+/* ── Carrossel de linhas de pesquisa (Home) ───────────────────────── */
+
+/* Container relativo para posicionar as setas */
+.linhas-carrossel {
+  position: relative;
+}
+
+/* Faixa deslizante horizontal */
+.linhas-faixa {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.25rem;
+}
+.linhas-faixa::-webkit-scrollbar { display: none; }
+
+/* Cada linha ocupa 1/3 em desktop, mais largo em telas menores */
+.linhas-faixa .galeria-local__item {
+  flex: 0 0 calc(33.33% - 1rem);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+@media (max-width: 64rem) {
+  .linhas-faixa .galeria-local__item { flex: 0 0 calc(50% - 0.75rem); }
+}
+@media (max-width: 40rem) {
+  .linhas-faixa .galeria-local__item { flex: 0 0 calc(85% - 0.75rem); }
+}
+
+/* Moldura e foto de cada linha */
+.linha-card__moldura {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--verde-claro);
+  margin-bottom: 0.75rem;
+}
+.linha-card__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.linha-card__moldura:hover .linha-card__foto { transform: scale(1.05); }
+
+.linha-card__titulo {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+.linhas-faixa p {
+  font-size: 0.97rem;
+  margin: 0;
+  max-width: none;
+}
+
+/* Setas: mesma aparência do galeria-local, posição ajustada */
+.linhas-carrossel .galeria-local__btn {
+  position: absolute;
+  top: 30%;           /* centro aproximado da foto (aspect 3:2) */
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0;
+  background: var(--verde);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(30,43,36,0.25);
+  transition: background 0.2s;
+  z-index: 2;
+}
+.linhas-carrossel .galeria-local__btn:hover { background: var(--verde-escuro); }
+.linhas-carrossel .galeria-local__btn--prev { left: -1.25rem; }
+.linhas-carrossel .galeria-local__btn--next { right: -1.25rem; }
+.linhas-carrossel .galeria-local__btn[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .linha-card__foto { transition: none; }
+  .linhas-carrossel .galeria-local__btn { transition: none; }
+}
+
+/* ════════════════════════════════════════════
+   Lipa Por Ai
+   ════════════════════════════════════════════ */
+/* ── LIPA por Aí ─────────────────────────────────────────── */
+
+/* Introdução da página */
+.noticias__intro {
+  max-width: 60ch;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.noticias__intro h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+.noticias__intro p {
+  color: var(--texto-suave, #555);
+  font-style: italic;
+}
+
+/* ── Cards de destaque ────────────────────────────────────── */
+.destaques {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0 0 3.5rem;
+  padding: 0;
+}
+@media (min-width: 48rem) {
+  .destaques { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 72rem) {
+  /* Primeiro card ocupa linha inteira se for o único na linha */
+  .destaques { grid-template-columns: repeat(3, 1fr); }
+  .destaques .destaque:first-child:nth-last-child(odd) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+  }
+  .destaques .destaque:first-child:nth-last-child(odd) .destaque__foto {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+}
+
+.destaque {
+  background: var(--superficie, #fff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.destaque:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.destaque__foto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--verde-claro);
+  display: block;
+}
+
+.destaque__corpo {
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.destaque__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--verde);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+  margin-bottom: 0.65rem;
+  align-self: flex-start;
+}
+.destaque__tag--premio  { background: #b8860b; }
+.destaque__tag--congresso { background: var(--verde); }
+.destaque__tag--publicacao { background: #3a6186; }
+.destaque__tag--outro   { background: #666; }
+
+.destaque__data {
+  font-size: 0.82rem;
+  color: var(--texto-suave, #777);
+  margin-bottom: 0.35rem;
+}
+
+.destaque__titulo {
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 0.6rem;
+}
+
+.destaque__texto {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Linha do tempo ───────────────────────────────────────── */
+.timeline-titulo {
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  margin: 0 0 1.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--verde-claro, #dce8e0);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Linha vertical */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5.5rem;
+  top: 0.4rem;
+  bottom: 0;
+  width: 2px;
+  background: var(--verde-claro, #dce8e0);
+}
+@media (max-width: 36rem) {
+  .timeline::before { left: 0; }
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0 1.75rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+@media (max-width: 36rem) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+    padding-left: 1.25rem;
+  }
+}
+
+.timeline__data {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--verde);
+  text-align: right;
+  padding-top: 0.2rem;
+  line-height: 1.3;
+}
+@media (max-width: 36rem) {
+  .timeline__data { text-align: left; margin-bottom: 0.2rem; }
+}
+
+/* Marcador circular na linha */
+.timeline__corpo {
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+.timeline__corpo::before {
+  content: '';
+  position: absolute;
+  left: -2.1rem;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--verde);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--verde);
+}
+@media (max-width: 36rem) {
+  .timeline__corpo::before { left: -1.5rem; }
+}
+
+.timeline__tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 0.15rem;
+}
+
+.timeline__titulo {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+  line-height: 1.35;
+}
+
+.timeline__texto {
+  font-size: 0.9rem;
+  color: var(--texto-suave, #555);
+  margin: 0;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destaque { transition: none; }
+}
+
+/* ════════════════════════════════════════════
+   Locais De Estudo
+   ════════════════════════════════════════════ */
+/* ── Locais de Estudo ───────────────────────────────────── */
+
+.local__cabecalho {
+  display: grid;
+  gap: 1.5rem 3rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 52rem) {
+  .local__cabecalho { grid-template-columns: 1fr 1.6fr; align-items: start; }
+}
+
+.local__titulo {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+}
+
+.local__subtitulo {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--verde);
+  margin: 0 0 0.75rem;
+}
+
+.local__descricao { margin: 0 0 1rem; max-width: 60ch; }
+
+
+/* Mapa */
+.local__mapa {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 6px;
+  background: var(--verde-claro);
+  display: block;
+}
+@media (min-width: 52rem) {
+  .local__mapa { aspect-ratio: 16 / 9; }
+}
+
+/* Carrossel horizontal */
+.galeria-local {
+  position: relative;
+  margin-top: 1.75rem;
+}
+
+.galeria-local__faixa {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.galeria-local__faixa::-webkit-scrollbar { display: none; }
+
+.galeria-local__item {
+  flex: 0 0 calc(25% - 0.75rem);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+}
+@media (max-width: 64rem) {
+  .galeria-local__item { flex: 0 0 calc(33.33% - 0.67rem); }
+}
+@media (max-width: 40rem) {
+  .galeria-local__item { flex: 0 0 calc(80% - 0.8rem); }
+}
+
+.galeria-local__foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--verde-claro);
+  transition: transform 0.35s ease;
+  cursor: zoom-in;
+}
+.galeria-local__item:hover .galeria-local__foto { transform: scale(1.03); }
+
+.galeria-local__legenda {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.galeria-local__item .credito-faixa {
+  bottom: calc(0.4rem + 1.35em);
+  border-radius: 0 0 4px 4px;
+}
+.galeria-local__item:hover .credito-faixa { opacity: 1; }
+
+/* Setas */
+.galeria-local__btn {
+  position: absolute;
+  top: calc(50% - 1.75rem);
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0;
+  background: var(--verde);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(30,43,36,0.25);
+  transition: background 0.2s;
+  z-index: 2;
+}
+.galeria-local__btn:hover { background: var(--verde-escuro); }
+.galeria-local__btn--prev { left: -1.25rem; }
+.galeria-local__btn--next { right: -1.25rem; }
+.galeria-local__btn[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria-local__foto { transition: none; }
+}
+
+/* ════════════════════════════════════════════
+   Eduardo Nery
+   ════════════════════════════════════════════ */
+/* ── Perfil de pós-doc ─────────────────────────────────── */
+
+.posdoc {
+  padding: var(--secao-padding, 2.5rem 0);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Cabeçalho: foto + nome/cargo/interesses */
+.posdoc__cabecalho {
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  align-items: start;
+}
+@media (min-width: 52rem) {
+  .posdoc__cabecalho { grid-template-columns: 200px 1fr; }
+}
+
+.posdoc__foto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--verde-claro);
+  display: block;
+}
+
+.posdoc__identidade {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.posdoc__nome {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  margin: 0 0 0.2rem;
+}
+
+.posdoc__cargo {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--verde);
+  margin: 0 0 0.1rem;
+}
+
+.posdoc__financiamento {
+  font-size: 0.88rem;
+  color: var(--texto-suave, #666);
+  margin: 0;
+}
+
+/* Interesses: pílulas — espaço generoso acima e abaixo */
+.posdoc__interesses {
+  list-style: none;
+  margin: 1.5rem 0;   /* espaço antes e depois das pílulas */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.posdoc__interesses li {
+  background: var(--verde-claro);
+  color: var(--verde-escuro, #1e2b24);
+  font-size: 0.82rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 20px;
+  line-height: 1.3;
+}
+
+/* Links */
+.posdoc__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Sobre */
+.posdoc__sobre-titulo {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1.5px solid var(--verde-claro);
+}
+
+.posdoc__bio {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+  text-align: justify;
+  hyphens: auto;
+}
+.posdoc__bio:last-of-type { margin-bottom: 1.25rem; }
+
+/* ── Painel de fotos sticky ────────────────────────────── */
+
+/* align-items: start é obrigatório para sticky funcionar no filho */
+.hero { align-items: start !important; }
+
+/* O painel--4 do style.css usa position:relative + imgs absolutas.
+   Aqui sobrescrevemos para sticky + altura de viewport. */
+.hero .midia.painel--4 {
+  position: sticky !important;
+  top: 0;
+  height: 100vh;
+  align-self: start;
+  min-height: unset;
+}
+
+/* As imgs são absolute no style.css original — mantemos isso,
+   mas garantimos que cada uma ocupe exatamente 50% da altura */
+.hero .painel--4 img {
+  position: absolute;
+  width: calc(50% - 2px);
+  height: calc(50% - 2px);
+  object-fit: cover;
+}
+.hero .painel--4 img:nth-child(1) { top: 0;                       left: 0; }
+.hero .painel--4 img:nth-child(2) { top: 0;                       right: 0; }
+.hero .painel--4 img:nth-child(3) { bottom: 0;                    left: 0; }
+.hero .painel--4 img:nth-child(4) { bottom: 0;                    right: 0; }
+
+/* Em telas pequenas volta ao fluxo normal */
+@media (max-width: 52rem) {
+  .hero .midia.painel--4 {
+    position: static !important;
+    height: auto;
+    min-height: 24rem;
+  }
+  .hero .painel--4 img {
+    height: calc(50% - 2px);
+  }
+}

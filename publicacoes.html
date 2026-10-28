@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  data-titulo-pt="Publicações | LIPA"
+  data-titulo-en="Publications | LIPA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicações | LIPA</title>
+  <meta name="description" content="Publicações científicas do Laboratório de Interações Planta-Animal (LIPA).">
+  <script src="js/acesso.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/publicacoes.js" defer></script>
+  <script src="js/cabecalho.js" defer></script>
+  <script src="js/idioma.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo" data-pt="Ir para o conteúdo" data-en="Skip to content">Ir para o conteúdo</a>
+
+  <header class="topo">
+    <a class="topo__nome" href="index.html">LIPA - Laboratório de Interações Planta-Animal</a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="index.html" data-pt="Home" data-en="Home">Home</a></li>
+        <li><a href="equipe.html" data-pt="Equipe" data-en="Team">Equipe</a></li>
+        <li><a href="projetos.html" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+        <li><a href="publicacoes.html" aria-current="page" data-pt="Publicações" data-en="Publications">Publicações</a></li>
+        <li><a href="locais-de-estudo.html" data-pt="Locais de estudo" data-en="Study sites">Locais de estudo</a></li>
+        <li><a href="lipa-por-ai.html"      data-pt="LIPA por Aí"        data-en="LIPA Out There">LIPA por Aí</a></li>
+        <li><a href="links-uteis.html" data-pt="Links úteis" data-en="Useful links">Links úteis</a></li>
+        <li><a href="contato.html" data-pt="Contato" data-en="Contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <h1 class="so-leitor" data-pt="Publicações" data-en="Publications">Publicações</h1>
+
+    <section class="secao" id="publicacoes">
+      <div class="container">
+        <div class="secao__topo">
+          <h2 class="titulo-secao" data-pt="Publicações" data-en="Publications">Publicações</h2>
+          <p class="aviso"
+            data-pt="Os direitos autorais dos artigos pertencem às respectivas editoras. Ao baixar um artigo, você concorda em usá-lo apenas para estudo e pesquisa pessoal, sem fins comerciais, e em não modificá-lo nem distribuí-lo sem autorização das editoras e dos autores."
+            data-en="The copyright of the articles belongs to the respective publishers. By downloading an article, you agree to use it only for personal study and research, without commercial purposes, and not to modify or distribute it without authorization from the publishers and authors.">
+            Os direitos autorais dos artigos pertencem às respectivas editoras. Ao baixar um artigo, você concorda em usá-lo apenas para estudo e pesquisa pessoal, sem fins comerciais, e em não modificá-lo nem distribuí-lo sem autorização das editoras e dos autores.
+          </p>
+        </div>
+
+        <div class="filtros" id="filtros" role="group"
+          data-pt-label="Filtrar publicações"
+          data-en-label="Filter publications"
+          aria-label="Filtrar publicações" hidden>
+          <div class="filtro">
+            <label for="filtro-ano" data-pt="Ano" data-en="Year">Ano</label>
+            <select id="filtro-ano"><option value="" data-pt="Todos" data-en="All">Todos</option></select>
+          </div>
+          <div class="filtro">
+            <label for="filtro-autor" data-pt="Autor" data-en="Author">Autor</label>
+            <select id="filtro-autor">
+              <option value="" data-pt="Todos" data-en="All">Todos</option>
+              <option value="amanda-vieira">Amanda Vieira</option>
+              <option value="anselmo-nogueira">Anselmo Nogueira</option>
+              <option value="bruna-barbosa">Bruna Barbosa</option>
+              <option value="caian-gerolamo">Caian Gerolamo</option>
+              <option value="eduardo-nery">Eduardo Nery</option>
+              <option value="emilly-lima">Emilly Lima</option>
+              <option value="guilherme-mota">Guilherme Mota</option>
+              <option value="italo-coutinho">Italo Coutinho</option>
+              <option value="juliana-rando">Juliana Rando</option>
+              <option value="laura-leal">Laura Leal</option>
+              <option value="luana-prochazka">Luana Prochazka</option>
+              <option value="lucas-bartsch">Lucas Bartsch</option>
+              <option value="matheus-siqueira">Matheus Siqueira</option>
+              <option value="tamiris-delgado">Tamiris Delgado</option>
+            </select>
+          </div>
+          <div class="filtro">
+            <label for="filtro-linha"
+              data-pt="Linha de pesquisa"
+              data-en="Research line">Linha de pesquisa</label>
+            <select id="filtro-linha">
+              <option value="" data-pt="Todas" data-en="All">Todas</option>
+              <option value="defesa"
+                data-pt="Mutualismo de Defesa Planta-Formiga"
+                data-en="Plant-Ant Defense Mutualism">Mutualismo de Defesa Planta-Formiga</option>
+              <option value="polinizacao"
+                data-pt="Mutualismo de Polinização Planta-Abelha"
+                data-en="Plant-Bee Pollination Mutualism">Mutualismo de Polinização Planta-Abelha</option>
+              <option value="nutricao"
+                data-pt="Mutualismo de Nutrição Planta-Bactéria"
+                data-en="Plant-Bacteria Nutrition Mutualism">Mutualismo de Nutrição Planta-Bactéria</option>
+              <option value="macroevolucao"
+                data-pt="Macroevolução"
+                data-en="Macroevolution">Macroevolução</option>
+            </select>
+          </div>
+          <button type="button" id="filtro-limpar" class="filtros__limpar"
+            data-pt="Limpar filtros" data-en="Clear filters" hidden>Limpar filtros</button>
+        </div>
+        <p class="filtro-contador" id="filtro-contador" aria-live="polite"></p>
+
+        <ul class="publicacoes" id="lista-publicacoes">
+          <li data-ano="2026" data-autores="guilherme-mota tamiris-delgado bruna-barbosa anselmo-nogueira" data-linhas="polinizacao" data-locais="ufabc">
+            <span class="publicacao__ano">2026</span>
+            <div class="publicacao__corpo">
+              <img class="publicacao__imagem" src="img/artigo-gui.png" alt="EDITAR: descreva a figura do artigo">
+              <div>
+                <p>Mota, G.V.; Delgado, T.; Barbosa, B.C.; Nogueira, A. (2026). <strong>Locked pollen, unchanged buzzes: Bumblebee foraging behavior persists despite pollen restriction in a poricidal legume.</strong> <em>Zealand Journal of Zoology</em>, 53(4), e70070.</p>
+                <div class="publicacao__acoes">
+                  <a class="botao" href="pdf/mota-et-al-2026.pdf" download
+                    data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
+                  <a class="botao botao--contorno" href="https://doi.org/10.1002/njz2.70070" target="_blank" rel="noopener"
+                    data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li data-ano="2026" data-autores="eduardo-nery juliana-rando luana-prochazka anselmo-nogueira" data-linhas="macroevolucao" data-locais="ampla-escala">
+            <span class="publicacao__ano">2026</span>
+            <div class="publicacao__corpo">
+              <img class="publicacao__imagem" src="img/artigo-edu.png" alt="EDITAR: descreva a figura do artigo">
+              <div>
+                <p>Nery, E.K.; Rando, J.G.; Prochazka, L.S.; Nogueira, A. (2026). <strong>The evolution of endemism within a major legume lineage of the campos rupestres.</strong> <em>Annals of Botany</em>, mcag159.</p>
+                <div class="publicacao__acoes">
+                  <a class="botao" href="pdf/Nery-et-al-2026.pdf" download
+                    data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
+                  <a class="botao botao--contorno" href="https://doi.org/10.1093/aob/mcag159" target="_blank" rel="noopener"
+                    data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li data-ano="2024" data-autores="luana-prochazka juliana-rando anselmo-nogueira" data-linhas="nutricao macroevolucao" data-locais="ampla-escala">
+            <span class="publicacao__ano">2024</span>
+            <div class="publicacao__corpo">
+              <img class="publicacao__imagem" src="img/artigo-luana.png" alt="EDITAR: descreva a figura do artigo">
+              <div>
+                <p>Prochazka, L.S.; Alcantara, S.; Rando J.G.; Vasconcelos, T.; Pizzardo, R.C.; Nogueira, A. (2024). <strong>Availability and disturbance frequency shape evolution of plant life forms in Neotropical habitats.</strong> <em>New Phytologist</em>, 242(2), 760–773.</p>
+                <div class="publicacao__acoes">
+                  <a class="botao" href="pdf/prochazka-et-al-2024.pdf" download
+                    data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
+                  <a class="botao botao--contorno" href="https://doi.org/10.1111/nph.19601" target="_blank" rel="noopener"
+                    data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li data-ano="2023" data-autores="bruna-barbosa tamiris-delgado guilherme-mota anselmo-nogueira" data-linhas="polinizacao" data-locais="ufabc">
+            <span class="publicacao__ano">2023</span>
+            <div class="publicacao__corpo">
+              <img class="publicacao__imagem" src="img/bruna-1.png" alt="EDITAR: descreva a figura do artigo">
+              <div>
+                <p>Barbosa, B.C.; Delgado, T.; Mota, G.V.; Nogueira, A. (2023). <strong>The role of intraspecific variation in bumblebee body size and behavior on buzz pollination of a tropical legume species.</strong> <em>American Journal of Botany</em>, 110(11), e16236.</p>
+                <div class="publicacao__acoes">
+                  <a class="botao" href="pdf/barbosa-et-al-2023.pdf" download
+                    data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
+                  <a class="botao botao--contorno" href="https://doi.org/10.1002/ajb2.16236" target="_blank" rel="noopener"
+                    data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
+                </div>
+              </div>
+            </div>
+          </li>
+         <li data-ano="2023" data-autores="luanderson-alencar anselmo-nogueira italo-coutinho" data-linhas="defesa" data-locais="pentecostes">
+            <span class="publicacao__ano">2023</span>
+            <div class="publicacao__corpo">
+              <img class="publicacao__imagem" src="img/luanderson-2.png" alt="EDITAR: descreva a figura do artigo">
+              <div>
+                <p>Alencar, C.L.S.; Nogueira, A.; Vicente, R.E.; Coutinho, I.A.C. (2023). <strong>Plant species with larger extrafloral nectaries produce better quality nectar when needed and interact with the best ant partners.</strong> <em>Journal of Experimental Botany</em>, 74(15), 4613–4627.</p>
+                <div class="publicacao__acoes">
+                  <a class="botao" href="pdf/alencar-et-al-2023.pdf" download
+                    data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
+                  <a class="botao botao--contorno" href="https://doi.org/10.1093/jxb/erad160" target="_blank" rel="noopener"
+                    data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p id="sem-resultados"
+          data-pt="Nenhuma publicação encontrada para esta combinação de filtros."
+          data-en="No publications found for this combination of filters." hidden>
+          Nenhuma publicação encontrada para esta combinação de filtros.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container rodape__grade">
+      <div>
+        <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+        <p>
+          <span data-pt="Universidade Federal do ABC (UFABC)" data-en="Federal University of ABC (UFABC)">Universidade Federal do ABC (UFABC)</span><br>
+          Alameda da Universidade, s/n, Bloco Zeta, laboratório 009<br>
+          <span data-pt="Bairro Anchieta, CEP: 09606-045" data-en="Anchieta district, ZIP: 09606-045">Bairro Anchieta, CEP: 09606-045</span><br>
+          <span data-pt="São Bernardo do Campo - SP" data-en="São Bernardo do Campo, SP, Brazil">São Bernardo do Campo - SP</span><br>
+          <a href="mailto:a.nogueira@ufabc.edu.br">a.nogueira@ufabc.edu.br</a>
+        </p>
+      </div>
+      <p class="rodape__nota">© 2026 LIPA - Laboratório de Interações Planta-Animal.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

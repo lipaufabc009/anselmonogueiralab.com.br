@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+  data-titulo-pt="LIPA por Aí | LIPA"
+  data-titulo-en="LIPA Out There | LIPA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIPA por Aí | LIPA</title>
+  <meta name="description" content="Novidades do Laboratório de Interações Planta-Animal: prêmios, congressos, publicações e muito mais.">
+  <script src="js/acesso.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/cabecalho.js" defer></script>
+  <script src="js/idioma.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo" data-pt="Ir para o conteúdo" data-en="Skip to content">Ir para o conteúdo</a>
+
+  <header class="topo">
+    <a class="topo__nome" href="index.html">LIPA - Laboratório de Interações Planta-Animal</a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="index.html"            data-pt="Home"            data-en="Home">Home</a></li>
+        <li><a href="equipe.html"           data-pt="Equipe"          data-en="Team">Equipe</a></li>
+        <li><a href="projetos.html"         data-pt="Projetos"        data-en="Projects">Projetos</a></li>
+        <li><a href="publicacoes.html"      data-pt="Publicações"     data-en="Publications">Publicações</a></li>
+        <li><a href="locais-de-estudo.html" data-pt="Locais de Estudo" data-en="Study Sites">Locais de Estudo</a></li>
+        <li><a href="lipa-por-ai.html"      aria-current="page"
+               data-pt="LIPA por Aí"        data-en="LIPA Out There">LIPA por Aí</a></li>
+        <li><a href="links-uteis.html"      data-pt="Links úteis"     data-en="Useful links">Links úteis</a></li>
+        <li><a href="contato.html"          data-pt="Contato"         data-en="Contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <h1 class="so-leitor" data-pt="LIPA por Aí" data-en="LIPA Out There">LIPA por Aí</h1>
+
+    <section class="secao" id="noticias">
+      <div class="container">
+
+        <div class="noticias__intro">
+          <h2 data-pt="LIPA por Aí" data-en="LIPA Out There">LIPA por Aí</h2>
+          <p data-pt="Prêmios, congressos, novidades do campo e tudo o que o laboratório anda fazendo pelo mundo."
+             data-en="Awards, conferences, field updates and everything the lab has been up to around the world.">
+            Prêmios, congressos, novidades do campo e tudo o que o laboratório anda fazendo pelo mundo.
+          </p>
+        </div>
+
+        <!--
+          ══════════════════════════════════════════════════════════════════
+          CARDS DE DESTAQUE
+          Como adicionar: copie um bloco <li class="destaque"> inteiro.
+          Cole no início da lista (novidades mais recentes primeiro).
+
+          Tags disponíveis (classe da .destaque__tag):
+            destaque__tag--premio      → prêmio
+            destaque__tag--congresso   → congresso
+            destaque__tag--publicacao  → publicação
+            destaque__tag--outro       → outro
+
+          Sem foto? Apague a linha <img class="destaque__foto"...>.
+          ══════════════════════════════════════════════════════════════════
+        -->
+        <ul class="destaques" aria-label="Destaques">
+
+          <li class="destaque">
+            <img class="destaque__foto" src="img/campo.svg"
+              alt="EDITAR: descreva a imagem do destaque">
+            <div class="destaque__corpo">
+              <span class="destaque__tag destaque__tag--premio"
+                data-pt="🏆 Prêmio" data-en="🏆 Award">🏆 Prêmio</span>
+              <p class="destaque__data"
+                data-pt="Outubro de 2026"
+                data-en="October 2026">Outubro de 2026</p>
+              <h3 class="destaque__titulo"
+                data-pt="Guilherme Mota recebe prêmio de melhor apresentação no Congresso Brasileiro de Botânica"
+                data-en="Guilherme Mota receives best presentation award at the Brazilian Botany Congress">
+                Guilherme Mota recebe prêmio de melhor apresentação no Congresso Brasileiro de Botânica
+              </h3>
+              <p class="destaque__texto"
+                data-pt="O trabalho apresentado por Guilherme, sobre o comportamento de forrageamento de mamangavas em leguminosas poricidas, foi premiado como melhor apresentação oral na categoria Ecologia do evento."
+                data-en="Guilherme's work on bumblebee foraging behavior in poricidal legumes was awarded best oral presentation in the Ecology category at the event.">
+                O trabalho apresentado por Guilherme, sobre o comportamento de forrageamento de mamangavas em leguminosas poricidas, foi premiado como melhor apresentação oral na categoria Ecologia do evento.
+              </p>
+            </div>
+          </li>
+
+          <li class="destaque">
+            <img class="destaque__foto" src="img/campo.svg"
+              alt="EDITAR: descreva a imagem do destaque">
+            <div class="destaque__corpo">
+              <span class="destaque__tag destaque__tag--congresso"
+                data-pt="🌿 Congresso" data-en="🌿 Conference">🌿 Congresso</span>
+              <p class="destaque__data"
+                data-pt="Setembro de 2026"
+                data-en="September 2026">Setembro de 2026</p>
+              <h3 class="destaque__titulo"
+                data-pt="LIPA na International Society for Evolutionary Biology"
+                data-en="LIPA at the International Society for Evolutionary Biology">
+                LIPA na International Society for Evolutionary Biology
+              </h3>
+              <p class="destaque__texto"
+                data-pt="Anselmo Nogueira e Eduardo Nery apresentaram trabalhos sobre macroevolução de interações planta-animal no encontro anual da ISEB, realizado em Montreal, Canadá."
+                data-en="Anselmo Nogueira and Eduardo Nery presented work on the macroevolution of plant-animal interactions at the ISEB annual meeting in Montreal, Canada.">
+                Anselmo Nogueira e Eduardo Nery apresentaram trabalhos sobre macroevolução de interações planta-animal no encontro anual da ISEB, realizado em Montreal, Canadá.
+              </p>
+            </div>
+          </li>
+
+          <li class="destaque">
+            <img class="destaque__foto" src="img/campo.svg"
+              alt="EDITAR: descreva a imagem do destaque">
+            <div class="destaque__corpo">
+              <span class="destaque__tag destaque__tag--publicacao"
+                data-pt="📄 Publicação" data-en="📄 Publication">📄 Publicação</span>
+              <p class="destaque__data"
+                data-pt="Junho de 2026"
+                data-en="June 2026">Junho de 2026</p>
+              <h3 class="destaque__titulo"
+                data-pt="Novo artigo publicado na Annals of Botany"
+                data-en="New article published in Annals of Botany">
+                Novo artigo publicado na Annals of Botany
+              </h3>
+              <p class="destaque__texto"
+                data-pt="Eduardo Nery e colaboradores publicaram um estudo sobre a evolução do endemismo em leguminosas do campo rupestre, com base em análises filogenéticas de ampla escala."
+                data-en="Eduardo Nery and collaborators published a study on the evolution of endemism in rupestrian grassland legumes, based on broad-scale phylogenetic analyses.">
+                Eduardo Nery e colaboradores publicaram um estudo sobre a evolução do endemismo em leguminosas do campo rupestre, com base em análises filogenéticas de ampla escala.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div class="container rodape__grade">
+      <div>
+        <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+        <p>
+          <span data-pt="Universidade Federal do ABC (UFABC)" data-en="Federal University of ABC (UFABC)">Universidade Federal do ABC (UFABC)</span><br>
+          Alameda da Universidade, s/n, Bloco Zeta, laboratório 009<br>
+          <span data-pt="Bairro Anchieta, CEP: 09606-045" data-en="Anchieta district, ZIP: 09606-045">Bairro Anchieta, CEP: 09606-045</span><br>
+          <span data-pt="São Bernardo do Campo - SP" data-en="São Bernardo do Campo, SP, Brazil">São Bernardo do Campo - SP</span><br>
+          <a href="mailto:a.nogueira@ufabc.edu.br">a.nogueira@ufabc.edu.br</a>
+        </p>
+      </div>
+      <p class="rodape__nota">© 2026 LIPA - Laboratório de Interações Planta-Animal.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
