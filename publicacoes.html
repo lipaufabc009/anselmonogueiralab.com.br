@@ -109,7 +109,7 @@
               <div>
                 <p>Mota, G.V.; Delgado, T.; Barbosa, B.C.; Nogueira, A. (2026). <strong>Locked pollen, unchanged buzzes: Bumblebee foraging behavior persists despite pollen restriction in a poricidal legume.</strong> <em>Zealand Journal of Zoology</em>, 53(4), e70070.</p>
                 <div class="publicacao__acoes">
-                  <a class="botao" data-umami-event="download-pdf" data-umami-event-file="mota-et-al-2026.pdf" href="pdf/mota-et-al-2026.pdf" download
+                  <a class="botao" href="pdf/mota-et-al-2026.pdf" download
                     data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
                   <a class="botao botao--contorno" href="https://doi.org/10.1002/njz2.70070" target="_blank" rel="noopener"
                     data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
@@ -124,7 +124,7 @@
               <div>
                 <p>Nery, E.K.; Rando, J.G.; Prochazka, L.S.; Nogueira, A. (2026). <strong>The evolution of endemism within a major legume lineage of the campos rupestres.</strong> <em>Annals of Botany</em>, mcag159.</p>
                 <div class="publicacao__acoes">
-                  <a class="botao" data-umami-event="download-pdf" data-umami-event-file="Nery-et-al-2026.pdf" href="pdf/Nery-et-al-2026.pdf" download
+                  <a class="botao" href="pdf/Nery-et-al-2026.pdf" download
                     data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
                   <a class="botao botao--contorno" href="https://doi.org/10.1093/aob/mcag159" target="_blank" rel="noopener"
                     data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
@@ -139,7 +139,7 @@
               <div>
                 <p>Prochazka, L.S.; Alcantara, S.; Rando J.G.; Vasconcelos, T.; Pizzardo, R.C.; Nogueira, A. (2024). <strong>Availability and disturbance frequency shape evolution of plant life forms in Neotropical habitats.</strong> <em>New Phytologist</em>, 242(2), 760–773.</p>
                 <div class="publicacao__acoes">
-                  <a class="botao" data-umami-event="download-pdf" data-umami-event-file="prochazka-et-al-2024.pdf" href="pdf/prochazka-et-al-2024.pdf" download
+                  <a class="botao" href="pdf/prochazka-et-al-2024.pdf" download
                     data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
                   <a class="botao botao--contorno" href="https://doi.org/10.1111/nph.19601" target="_blank" rel="noopener"
                     data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
@@ -154,7 +154,7 @@
               <div>
                 <p>Barbosa, B.C.; Delgado, T.; Mota, G.V.; Nogueira, A. (2023). <strong>The role of intraspecific variation in bumblebee body size and behavior on buzz pollination of a tropical legume species.</strong> <em>American Journal of Botany</em>, 110(11), e16236.</p>
                 <div class="publicacao__acoes">
-                  <a class="botao" data-umami-event="download-pdf" data-umami-event-file="barbosa-et-al-2023.pdf" href="pdf/barbosa-et-al-2023.pdf" download
+                  <a class="botao" href="pdf/barbosa-et-al-2023.pdf" download
                     data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
                   <a class="botao botao--contorno" href="https://doi.org/10.1002/ajb2.16236" target="_blank" rel="noopener"
                     data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
@@ -169,7 +169,7 @@
               <div>
                 <p>Alencar, C.L.S.; Nogueira, A.; Vicente, R.E.; Coutinho, I.A.C. (2023). <strong>Plant species with larger extrafloral nectaries produce better quality nectar when needed and interact with the best ant partners.</strong> <em>Journal of Experimental Botany</em>, 74(15), 4613–4627.</p>
                 <div class="publicacao__acoes">
-                  <a class="botao" data-umami-event="download-pdf" data-umami-event-file="alencar-et-al-2023.pdf" href="pdf/alencar-et-al-2023.pdf" download
+                  <a class="botao" href="pdf/alencar-et-al-2023.pdf" download
                     data-pt="Baixar PDF" data-en="Download PDF">Baixar PDF</a>
                   <a class="botao botao--contorno" href="https://doi.org/10.1093/jxb/erad160" target="_blank" rel="noopener"
                     data-pt="Ver artigo (DOI)" data-en="View article (DOI)">Ver artigo (DOI)</a>
@@ -203,5 +203,19 @@
     </div>
   </footer>
 
+
+  <script>
+  // Rastreamento de downloads de PDF via Umami
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="pdf/"][download]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var arquivo = link.getAttribute('href').replace('pdf/', '');
+        if (typeof umami !== 'undefined') {
+          umami.track('download-pdf', { arquivo: arquivo });
+        }
+      });
+    });
+  });
+  </script>
 </body>
 </html>
