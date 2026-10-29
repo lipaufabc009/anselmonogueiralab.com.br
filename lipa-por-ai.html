@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LIPA por Aí | LIPA</title>
   <meta name="description" content="Novidades do Laboratório de Interações Planta-Animal: prêmios, congressos, publicações e muito mais.">
-  <script src="js/acesso.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/acesso.js"></script>
   <script src="js/cabecalho.js" defer></script>
   <script src="js/idioma.js" defer></script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="9af79787-654b-4eb2-97c4-30496e3b047e"></script>
@@ -21,15 +21,15 @@
     <a class="topo__nome" href="index.html">LIPA - Laboratório de Interações Planta-Animal</a>
     <nav aria-label="Principal">
       <ul class="menu">
-        <li><a href="index.html"            data-pt="Home"            data-en="Home">Home</a></li>
-        <li><a href="equipe.html"           data-pt="Equipe"          data-en="Team">Equipe</a></li>
-        <li><a href="projetos.html"         data-pt="Projetos"        data-en="Projects">Projetos</a></li>
-        <li><a href="publicacoes.html"      data-pt="Publicações"     data-en="Publications">Publicações</a></li>
+        <li><a href="index.html"            data-pt="Home"             data-en="Home">Home</a></li>
+        <li><a href="equipe.html"           data-pt="Equipe"           data-en="Team">Equipe</a></li>
+        <li><a href="projetos.html"         data-pt="Projetos"         data-en="Projects">Projetos</a></li>
+        <li><a href="publicacoes.html"      data-pt="Publicações"      data-en="Publications">Publicações</a></li>
         <li><a href="locais-de-estudo.html" data-pt="Locais de Estudo" data-en="Study Sites">Locais de Estudo</a></li>
         <li><a href="lipa-por-ai.html"      aria-current="page"
                data-pt="LIPA por Aí"        data-en="LIPA Out There">LIPA por Aí</a></li>
-        <li><a href="links-uteis.html"      data-pt="Links úteis"     data-en="Useful links">Links úteis</a></li>
-        <li><a href="contato.html"          data-pt="Contato"         data-en="Contact">Contato</a></li>
+        <li><a href="links-uteis.html"      data-pt="Links úteis"      data-en="Useful links">Links úteis</a></li>
+        <li><a href="contato.html"          data-pt="Contato"          data-en="Contact">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -50,92 +50,149 @@
 
         <!--
           ══════════════════════════════════════════════════════════════════
-          CARDS DE DESTAQUE
-          Como adicionar: copie um bloco <li class="destaque"> inteiro.
-          Cole no início da lista (novidades mais recentes primeiro).
+          COMO ADICIONAR UMA NOTÍCIA:
+          Copie um bloco <article class="noticia"> inteiro até o </article>.
+          Cole no INÍCIO da lista (mais recente primeiro).
 
-          Tags disponíveis (classe da .destaque__tag):
-            destaque__tag--premio      → prêmio
-            destaque__tag--congresso   → congresso
-            destaque__tag--publicacao  → publicação
-            destaque__tag--outro       → outro
+          Tags disponíveis (classe da .noticia__tag):
+            noticia__tag--premio      → 🏆 Prêmio
+            noticia__tag--congresso   → 🌿 Congresso
+            noticia__tag--publicacao  → 📄 Publicação
+            noticia__tag--campo       → 🔭 Campo
+            noticia__tag--outro       → 📌 Outro
 
-          Sem foto? Apague a linha <img class="destaque__foto"...>.
+          Sem foto? Apague a linha <img class="noticia__foto"...>.
           ══════════════════════════════════════════════════════════════════
         -->
-        <ul class="destaques" aria-label="Destaques">
 
-          <li class="destaque">
-            <img class="destaque__foto" src="img/campo.svg"
-              alt="EDITAR: descreva a imagem do destaque">
-            <div class="destaque__corpo">
-              <span class="destaque__tag destaque__tag--premio"
-                data-pt="🏆 Prêmio" data-en="🏆 Award">🏆 Prêmio</span>
-              <p class="destaque__data"
-                data-pt="Outubro de 2026"
-                data-en="October 2026">Outubro de 2026</p>
-              <h3 class="destaque__titulo"
+        <div class="noticias__feed">
+
+          <article class="noticia">
+            <img class="noticia__foto" src="img/campo.svg" alt="EDITAR: descreva a imagem">
+            <div class="noticia__corpo">
+              <div class="noticia__meta">
+                <span class="noticia__tag noticia__tag--premio"
+                  data-pt="🏆 Prêmio" data-en="🏆 Award">🏆 Prêmio</span>
+                <time class="noticia__data"
+                  data-pt="Outubro de 2026" data-en="October 2026">Outubro de 2026</time>
+              </div>
+              <h3 class="noticia__titulo"
                 data-pt="Guilherme Mota recebe prêmio de melhor apresentação no Congresso Brasileiro de Botânica"
                 data-en="Guilherme Mota receives best presentation award at the Brazilian Botany Congress">
                 Guilherme Mota recebe prêmio de melhor apresentação no Congresso Brasileiro de Botânica
               </h3>
-              <p class="destaque__texto"
+              <p class="noticia__texto"
                 data-pt="O trabalho apresentado por Guilherme, sobre o comportamento de forrageamento de mamangavas em leguminosas poricidas, foi premiado como melhor apresentação oral na categoria Ecologia do evento."
                 data-en="Guilherme's work on bumblebee foraging behavior in poricidal legumes was awarded best oral presentation in the Ecology category at the event.">
                 O trabalho apresentado por Guilherme, sobre o comportamento de forrageamento de mamangavas em leguminosas poricidas, foi premiado como melhor apresentação oral na categoria Ecologia do evento.
               </p>
             </div>
-          </li>
+          </article>
 
-          <li class="destaque">
-            <img class="destaque__foto" src="img/campo.svg"
-              alt="EDITAR: descreva a imagem do destaque">
-            <div class="destaque__corpo">
-              <span class="destaque__tag destaque__tag--congresso"
-                data-pt="🌿 Congresso" data-en="🌿 Conference">🌿 Congresso</span>
-              <p class="destaque__data"
-                data-pt="Setembro de 2026"
-                data-en="September 2026">Setembro de 2026</p>
-              <h3 class="destaque__titulo"
+          <article class="noticia">
+            <img class="noticia__foto" src="img/campo.svg" alt="EDITAR: descreva a imagem">
+            <div class="noticia__corpo">
+              <div class="noticia__meta">
+                <span class="noticia__tag noticia__tag--congresso"
+                  data-pt="🌿 Congresso" data-en="🌿 Conference">🌿 Congresso</span>
+                <time class="noticia__data"
+                  data-pt="Setembro de 2026" data-en="September 2026">Setembro de 2026</time>
+              </div>
+              <h3 class="noticia__titulo"
                 data-pt="LIPA na International Society for Evolutionary Biology"
                 data-en="LIPA at the International Society for Evolutionary Biology">
                 LIPA na International Society for Evolutionary Biology
               </h3>
-              <p class="destaque__texto"
+              <p class="noticia__texto"
                 data-pt="Anselmo Nogueira e Eduardo Nery apresentaram trabalhos sobre macroevolução de interações planta-animal no encontro anual da ISEB, realizado em Montreal, Canadá."
                 data-en="Anselmo Nogueira and Eduardo Nery presented work on the macroevolution of plant-animal interactions at the ISEB annual meeting in Montreal, Canada.">
                 Anselmo Nogueira e Eduardo Nery apresentaram trabalhos sobre macroevolução de interações planta-animal no encontro anual da ISEB, realizado em Montreal, Canadá.
               </p>
             </div>
-          </li>
+          </article>
 
-          <li class="destaque">
-            <img class="destaque__foto" src="img/campo.svg"
-              alt="EDITAR: descreva a imagem do destaque">
-            <div class="destaque__corpo">
-              <span class="destaque__tag destaque__tag--publicacao"
-                data-pt="📄 Publicação" data-en="📄 Publication">📄 Publicação</span>
-              <p class="destaque__data"
-                data-pt="Junho de 2026"
-                data-en="June 2026">Junho de 2026</p>
-              <h3 class="destaque__titulo"
+          <article class="noticia">
+            <img class="noticia__foto" src="img/campo.svg" alt="EDITAR: descreva a imagem">
+            <div class="noticia__corpo">
+              <div class="noticia__meta">
+                <span class="noticia__tag noticia__tag--publicacao"
+                  data-pt="📄 Publicação" data-en="📄 Publication">📄 Publicação</span>
+                <time class="noticia__data"
+                  data-pt="Junho de 2026" data-en="June 2026">Junho de 2026</time>
+              </div>
+              <h3 class="noticia__titulo"
                 data-pt="Novo artigo publicado na Annals of Botany"
                 data-en="New article published in Annals of Botany">
-                Novo artigo publicado na Annals of Botany
+                Novo artigo publicado na <em>Annals of Botany</em>
               </h3>
-              <p class="destaque__texto"
+              <p class="noticia__texto"
                 data-pt="Eduardo Nery e colaboradores publicaram um estudo sobre a evolução do endemismo em leguminosas do campo rupestre, com base em análises filogenéticas de ampla escala."
                 data-en="Eduardo Nery and collaborators published a study on the evolution of endemism in rupestrian grassland legumes, based on broad-scale phylogenetic analyses.">
                 Eduardo Nery e colaboradores publicaram um estudo sobre a evolução do endemismo em leguminosas do campo rupestre, com base em análises filogenéticas de ampla escala.
               </p>
             </div>
-          </li>
+          </article>
 
-        </ul>
+          <article class="noticia">
+            <img class="noticia__foto" src="img/campo.svg" alt="EDITAR: descreva a imagem">
+            <div class="noticia__corpo">
+              <div class="noticia__meta">
+                <span class="noticia__tag noticia__tag--campo"
+                  data-pt="🔭 Campo" data-en="🔭 Fieldwork">🔭 Campo</span>
+                <time class="noticia__data"
+                  data-pt="Março de 2026" data-en="March 2026">Março de 2026</time>
+              </div>
+              <h3 class="noticia__titulo"
+                data-pt="Expedição a Pentecostes — CE"
+                data-en="Expedition to Pentecostes — CE">
+                Expedição a Pentecostes — CE
+              </h3>
+              <p class="noticia__texto"
+                data-pt="Coletas de dados sobre néctar extrafloral e interações com formigas em espécies de Caatinga, no início da estação chuvosa."
+                data-en="Data collection on extrafloral nectar and ant interactions in Caatinga species at the onset of the rainy season.">
+                Coletas de dados sobre néctar extrafloral e interações com formigas em espécies de Caatinga, no início da estação chuvosa.
+              </p>
+            </div>
+          </article>
 
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox"
+    data-pt-label="Foto ampliada" data-en-label="Enlarged photo"
+    aria-label="Foto ampliada">
+    <button type="button" class="lightbox__fechar"
+      data-pt-label="Fechar" data-en-label="Close"
+      aria-label="Fechar">&times;</button>
+    <img src="" alt="">
+    <p class="lightbox__legenda"></p>
+  </dialog>
+
+  <script>
+  (function () {
+    var janela = document.getElementById('lightbox');
+    if (!janela || typeof janela.showModal !== 'function') return;
+    var imgLb = janela.querySelector('img');
+    var legLb = janela.querySelector('.lightbox__legenda');
+
+    document.querySelectorAll('.noticia__foto').forEach(function (foto) {
+      foto.addEventListener('click', function () {
+        imgLb.src = foto.src;
+        imgLb.alt = foto.alt;
+        var noticia = foto.closest('.noticia');
+        var titulo  = noticia ? noticia.querySelector('.noticia__titulo') : null;
+        legLb.textContent = titulo ? titulo.textContent.trim() : '';
+        janela.showModal();
+      });
+    });
+
+    janela.querySelector('.lightbox__fechar').addEventListener('click', function () { janela.close(); });
+    janela.addEventListener('click', function (e) { if (e.target === janela) janela.close(); });
+  })();
+  </script>
 
   <footer class="rodape" id="contato">
     <div class="container rodape__grade">
