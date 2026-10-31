@@ -1,91 +1,161 @@
-// Barra do topo.
-// - Páginas normais: o nome do laboratório fica sempre visível; o menu some ao rolar a página
-//   para baixo e volta assim que se rola um pouco para cima.
-// - Páginas de alunos, alumni, colaboradores e projetos (cabeçalho com a classe "topo--compacto"):
-//   barra fina com um botão de três barras que abre e fecha o menu.
+// cabecalho.js
+// Injeta o botão de hambúrguer no cabeçalho e controla abertura/fechamento do menu.
+//
+// Funciona em DOIS tipos de cabeçalho:
+//   1. .topo--compacto  — páginas de alunos, pós-docs e projetos (SEMPRE hamburger)
+//   2. .topo normal     — páginas principais (Home, Equipe, etc.) → hamburger só em mobile
+//      O CSS oculta o botão em telas largas via media query; o JS apenas o injeta.
 (function () {
-  var cabecalho = document.querySelector('.topo');
-  if (!cabecalho) return;
 
-  if (cabecalho.classList.contains('topo--compacto')) {
-    iniciarMenuCompacto(cabecalho);
-    return;
-  }
+  // ─── Cria o botão de hambúrguer ─────────────────────────────────────────────
+  function criarBotao(labelAbrir, labelFechar) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'menu-botao';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', labelAbrir);
 
-  var LIMITE_TOPO = 80;   // perto do topo da página, o menu fica sempre visível (em pixels)
-  var SENSIBILIDADE = 8;  // quanto é preciso rolar para valer como "subiu" ou "desceu" (em pixels)
+    var barras = document.createElement('span');
+    barras.className = 'menu-botao__barras';
+    barras.setAttribute('aria-hidden', 'true');
+    btn.appendChild(barras);
 
-  var ultimo = window.pageYOffset;
-  var aguardando = false;
-
-  function atualizar() {
-    var atual = window.pageYOffset;
-    var diferenca = atual - ultimo;
-
-    if (atual <= LIMITE_TOPO) {
-      cabecalho.classList.remove('topo--recolhido');
-      ultimo = atual;
-    } else if (diferenca > SENSIBILIDADE) {
-      cabecalho.classList.add('topo--recolhido');    // descendo: esconde o menu
-      ultimo = atual;
-    } else if (diferenca < -SENSIBILIDADE) {
-      cabecalho.classList.remove('topo--recolhido'); // subindo: mostra o menu
-      ultimo = atual;
-    }
-    aguardando = false;
-  }
-
-  window.addEventListener('scroll', function () {
-    if (aguardando) return;
-    aguardando = true;
-    window.requestAnimationFrame(atualizar);
-  }, { passive: true });
-
-  // Quem navega pelo teclado (Tab) precisa enxergar o menu
-  cabecalho.addEventListener('focusin', function () {
-    cabecalho.classList.remove('topo--recolhido');
-  });
-
-  // ---------- menu de três barras (páginas individuais) ----------
-  function iniciarMenuCompacto(cab) {
-    var painel = cab.querySelector('nav');
-    if (!painel) return;
-    if (!painel.id) painel.id = 'menu-principal';
-
-    // O botão é criado aqui, então as páginas só precisam da classe "topo--compacto"
-    var botao = cab.querySelector('.menu-botao');
-    if (!botao) {
-      botao = document.createElement('button');
-      botao.type = 'button';
-      botao.className = 'menu-botao';
-      botao.setAttribute('aria-controls', painel.id);
-      botao.innerHTML = '<span class="menu-botao__barras" aria-hidden="true"></span>';
-      cab.insertBefore(botao, painel);
-    }
-
-    function definir(aberto) {
-      cab.classList.toggle('topo--aberto', aberto);
-      botao.setAttribute('aria-expanded', aberto ? 'true' : 'false');
-      botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
-    }
-    definir(false);
-
-    botao.addEventListener('click', function () {
-      definir(!cab.classList.contains('topo--aberto'));
+    btn.addEventListener('click', function () {
+      var topo = btn.closest('.topo');
+      var aberto = topo.classList.toggle('topo--aberto');
+      btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+      btn.setAttribute('aria-label', aberto ? labelFechar : labelAbrir);
     });
 
-    // Fecha ao clicar fora, ao apertar Esc ou ao escolher um link
-    document.addEventListener('click', function (e) {
-      if (!cab.contains(e.target)) definir(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && cab.classList.contains('topo--aberto')) {
-        definir(false);
-        botao.focus();
+    return btn;
+  }
+
+  // ─── Fecha o menu ao clicar fora dele ───────────────────────────────────────
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.topo.topo--aberto').forEach(function (topo) {
+      if (!topo.contains(e.target)) {
+        topo.classList.remove('topo--aberto');
+        var btn = topo.querySelector('.menu-botao');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', btn.dataset.labelAbrir || 'Abrir menu');
+        }
       }
     });
-    painel.addEventListener('click', function (e) {
-      if (e.target.closest('a')) definir(false);
+  });
+
+  // ─── Fecha o menu ao pressionar Escape ──────────────────────────────────────
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.topo.topo--aberto').forEach(function (topo) {
+      topo.classList.remove('topo--aberto');
+      var btn = topo.querySelector('.menu-botao');
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', btn.dataset.labelAbrir || 'Abrir menu');
+        btn.focus();
+      }
+    });
+  });
+
+  // ─── Fecha o menu ao clicar num link do menu ────────────────────────────────
+  document.querySelectorAll('.topo .menu a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var topo = link.closest('.topo');
+      if (topo) {
+        topo.classList.remove('topo--aberto');
+        var btn = topo.querySelector('.menu-botao');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', btn.dataset.labelAbrir || 'Abrir menu');
+        }
+      }
+    });
+  });
+
+  // ─── Inicialização ───────────────────────────────────────────────────────────
+  function init() {
+    var topos = document.querySelectorAll('.topo');
+
+    topos.forEach(function (topo) {
+      var nav = topo.querySelector('nav');
+      if (!nav) return;
+
+      var isCompacto = topo.classList.contains('topo--compacto');
+
+      // Rótulos do botão (PT/EN detectado pelo idioma atual da página)
+      var lang = document.documentElement.lang || 'pt';
+      var labelAbrir = lang.startsWith('en') ? 'Open menu' : 'Abrir menu';
+      var labelFechar = lang.startsWith('en') ? 'Close menu' : 'Fechar menu';
+
+      var btn = criarBotao(labelAbrir, labelFechar);
+      btn.dataset.labelAbrir = labelAbrir;
+
+      if (isCompacto) {
+        // Páginas compactas: botão vai diretamente no .topo, após a faixa nome+idioma
+        topo.appendChild(btn);
+      } else {
+        // Páginas principais: botão vai dentro da .topo__faixa (ao lado do botão PT/EN)
+        // A .topo__faixa é criada pelo idioma.js; se ainda não existir, aguardamos um frame
+        var faixa = topo.querySelector('.topo__faixa');
+        if (faixa) {
+          faixa.appendChild(btn);
+        } else {
+          // idioma.js ainda não rodou — aguarda o próximo frame de layout
+          requestAnimationFrame(function () {
+            var f = topo.querySelector('.topo__faixa');
+            if (f) {
+              f.appendChild(btn);
+            } else {
+              // fallback: appenda direto no topo
+              topo.insertBefore(btn, nav);
+            }
+          });
+        }
+      }
     });
   }
+
+  // ─── Recolhe/mostra a nav ao rolar (somente .topo normal, não .topo--compacto) ─
+  function initScroll() {
+    var topo = document.querySelector('.topo:not(.topo--compacto)');
+    if (!topo) return;
+
+    var ultimoScroll = 0;
+    var LIMIAR = 80; // px antes de começar a recolher
+
+    window.addEventListener('scroll', function () {
+      var atual = window.scrollY;
+
+      if (atual <= LIMIAR) {
+        // Próximo ao topo: sempre mostra
+        topo.classList.remove('topo--recolhido');
+      } else if (atual > ultimoScroll) {
+        // Rolando para baixo: recolhe
+        topo.classList.add('topo--recolhido');
+        // Fecha o menu se estiver aberto
+        if (topo.classList.contains('topo--aberto')) {
+          topo.classList.remove('topo--aberto');
+          var btn = topo.querySelector('.menu-botao');
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', btn.dataset.labelAbrir || 'Abrir menu');
+          }
+        }
+      } else {
+        // Rolando para cima: mostra
+        topo.classList.remove('topo--recolhido');
+      }
+
+      ultimoScroll = atual;
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { init(); initScroll(); });
+  } else {
+    init();
+    initScroll();
+  }
+
 })();

@@ -1684,6 +1684,30 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   }
 }
 
+/* ============================================================
+   ADAPTAÇÕES MOBILE — apenas max-width, nada de desktop
+   ============================================================ */
+
+/* ── Menu principal: alinhamento à esquerda em mobile ── */
+@media (max-width: 52rem) {
+  .topo:not(.topo--compacto) .menu {
+    justify-content: flex-start;
+  }
+}
+
+/* ── Oculta o botão sanduíche no .topo normal em telas largas ── */
+@media (min-width: 52rem) {
+  .topo:not(.topo--compacto) .menu-botao {
+    display: none;
+  }
+}
+
+/* ── Carrossel de linhas de pesquisa: 1 card por vez em mobile ── */
+/* Sobrescreve a regra 85% anterior para garantir 1 card visível */
+@media (max-width: 40rem) {
+  .linhas-faixa .galeria-local__item { flex: 0 0 min(92%, 20rem) !important; }
+}
+
 /* Foto */
 .noticia__foto {
   width: 100%;
