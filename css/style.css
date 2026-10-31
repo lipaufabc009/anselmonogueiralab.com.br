@@ -1630,7 +1630,10 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 
 /* Em telas pequenas: desativa sticky e volta ao grid 2×2 normal */
 @media (max-width: 52rem) {
-  .hero { align-items: stretch !important; }
+  .hero { align-items: stretch !important; flex-direction: column; }
+
+  /* Fotos sobem antes do texto */
+  .hero .midia.painel--4 { order: -1; }
 
   .hero .midia.painel--4 {
     position: static !important;
