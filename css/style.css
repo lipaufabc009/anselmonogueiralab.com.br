@@ -1695,11 +1695,9 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   }
 }
 
-/* ── Oculta o botão sanduíche no .topo normal em telas largas ── */
-@media (min-width: 52rem) {
-  .topo:not(.topo--compacto) .menu-botao {
-    display: none;
-  }
+/* ── Oculta o botão sanduíche no .topo normal (sempre, em qualquer tela) ── */
+.topo:not(.topo--compacto) .menu-botao {
+  display: none !important;
 }
 
 /* ── Carrossel de linhas de pesquisa: 1 card por vez em mobile ── */
