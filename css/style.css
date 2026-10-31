@@ -1628,15 +1628,25 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 .hero .painel--4 img:nth-child(3) { bottom: 0;                    left: 0; }
 .hero .painel--4 img:nth-child(4) { bottom: 0;                    right: 0; }
 
-/* Em telas pequenas volta ao fluxo normal */
+/* Em telas pequenas: desativa sticky e volta ao grid 2×2 normal */
 @media (max-width: 52rem) {
+  .hero { align-items: stretch !important; }
+
   .hero .midia.painel--4 {
     position: static !important;
-    height: auto;
-    min-height: 24rem;
+    height: auto !important;
+    min-height: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.25rem;
   }
+
   .hero .painel--4 img {
-    height: calc(50% - 2px);
+    position: static !important;
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
   }
 }
 
