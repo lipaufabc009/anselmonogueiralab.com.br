@@ -1693,6 +1693,11 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   .topo:not(.topo--compacto) .menu {
     justify-content: flex-start;
   }
+
+  /* Nome do laboratório menor no mobile: 2 linhas em vez de 3 */
+  .topo__nome {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
 }
 
 /* ── Botão sanduíche no .topo normal: oculto no desktop, ativo no mobile ── */
