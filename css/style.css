@@ -1695,9 +1695,42 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   }
 }
 
-/* ── Oculta o botão sanduíche no .topo normal (sempre, em qualquer tela) ── */
+/* ── Botão sanduíche no .topo normal: oculto no desktop, ativo no mobile ── */
 .topo:not(.topo--compacto) .menu-botao {
-  display: none !important;
+  display: none;
+}
+
+@media (scripting: enabled) and (max-width: 52rem) {
+  /* Mostra o botão */
+  .topo:not(.topo--compacto) .menu-botao {
+    display: grid;
+  }
+
+  /* Esconde o nav por padrão */
+  .topo:not(.topo--compacto) nav {
+    display: none;
+  }
+
+  /* Mostra quando aberto */
+  .topo:not(.topo--compacto).topo--aberto nav {
+    display: block;
+  }
+
+  /* Menu em coluna vertical */
+  .topo:not(.topo--compacto).topo--aberto .menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+
+  .topo:not(.topo--compacto).topo--aberto .menu a {
+    display: block;
+    padding: 0.75rem var(--margem);
+  }
+
+  .topo:not(.topo--compacto).topo--aberto .menu a:hover {
+    background: rgba(255,255,255,0.12);
+  }
 }
 
 /* ── Carrossel de linhas de pesquisa: 1 card por vez em mobile ── */
