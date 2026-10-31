@@ -1700,10 +1700,18 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   display: none;
 }
 
-@media (scripting: enabled) and (max-width: 52rem) {
+@media (max-width: 52rem) {
   /* Mostra o botão */
   .topo:not(.topo--compacto) .menu-botao {
     display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    flex: none;
   }
 
   /* Esconde o nav por padrão */
