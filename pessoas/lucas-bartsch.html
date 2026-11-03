@@ -49,6 +49,116 @@
           Mestrado pelo Programa de Evolução e Diversidade — Universidade Federal do ABC (UFABC)
         </p>
 
+        <div class="posdoc__trajetoria">
+          <h2 class="posdoc__trajetoria-titulo"
+            data-pt="Trajetória no LIPA" data-en="Journey at LIPA">Trajetória no LIPA</h2>
+
+          <!-- linha do tempo horizontal -->
+          <div class="trajetoria-strip">
+
+            <!-- etapa IC -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="ic">
+              <div class="trajetoria-etapa__icone">🎓</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="IC" data-en="Undergrad Research">IC</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="coorientado" data-en="co-supervised">coorientado</span>
+              </div>
+            </button>
+
+            <span class="trajetoria-seta" aria-hidden="true">→</span>
+
+            <!-- etapa Mestrado -->
+            <button class="trajetoria-etapa trajetoria-etapa--atual trajetoria-btn" aria-expanded="false" data-etapa="mestrado">
+              <div class="trajetoria-etapa__icone trajetoria-etapa__icone--atual">🔬</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Mestrado" data-en="Master's">Mestrado</span>
+                <span class="trajetoria-etapa__sub trajetoria-etapa__sub--atual"
+                  data-pt="orientado · concluído" data-en="supervised · completed">orientado · concluído</span>
+              </div>
+            </button>
+
+          </div><!-- /trajetoria-strip -->
+
+          <!-- dica de interação -->
+          <p class="trajetoria-dica"
+            data-pt="Clique em uma etapa para ver detalhes."
+            data-en="Click a step to see details.">Clique em uma etapa para ver detalhes.</p>
+
+          <!-- painel de detalhes — estilo linha do tempo vertical (opção 3) -->
+          <div class="trajetoria-painel" id="trajetoria-painel" hidden>
+
+            <!-- detalhes IC -->
+            <div class="trajetoria-detalhe" id="detalhe-ic" hidden>
+              <p class="traj-periodo">2017–2022 · UNIFESP</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientadora" data-en="Supervisor">Orientadora:</dt>
+                  <dd>Laura Leal de Sousa</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Coorientador" data-en="Co-supervisor">Coorientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd>Como o Sombreamento Influencia a Secreção de Néctar Extrafloral em <em>Chamaecrista nictitans</em>?</dd>
+                </div>
+              </dl>
+            </div><!-- /detalhe-ic -->
+
+            <!-- detalhes Mestrado -->
+            <div class="trajetoria-detalhe" id="detalhe-mestrado" hidden>
+              <p class="traj-periodo">2023–2026 · UFABC</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientador" data-en="Supervisor">Orientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Coorientadores" data-en="Co-supervisors">Coorientadores:</dt>
+                  <dd>Célio Angolini · Caian Gerolamo</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd>Variações temporais na alocação de carboidratos em plantas: Impacto do estresse hídrico sobre interações mutualistas.</dd>
+                </div>
+              </dl>
+            </div><!-- /detalhe-mestrado -->
+
+          </div><!-- /trajetoria-painel -->
+        </div><!-- /posdoc__trajetoria -->
+
+        <script>
+          (function () {
+            var btns = document.querySelectorAll('.trajetoria-btn');
+            var painel = document.getElementById('trajetoria-painel');
+            var detalhes = document.querySelectorAll('.trajetoria-detalhe');
+
+            btns.forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                var etapa = btn.dataset.etapa;
+                var jaAberto = btn.getAttribute('aria-expanded') === 'true';
+
+                // fecha tudo
+                btns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); b.classList.remove('trajetoria-btn--ativo'); });
+                detalhes.forEach(function (d) { d.hidden = true; });
+
+                if (jaAberto) {
+                  painel.hidden = true;
+                } else {
+                  btn.setAttribute('aria-expanded', 'true');
+                  btn.classList.add('trajetoria-btn--ativo');
+                  document.getElementById('detalhe-' + etapa).hidden = false;
+                  painel.hidden = false;
+                }
+              });
+            });
+          })();
+        </script>
+
         <ul class="posdoc__interesses">
           <li data-pt="Ecofisiologia vegetal" data-en="Plant ecophysiology">Ecofisiologia vegetal</li>
           <li data-pt="Mutualismo planta-bactéria" data-en="Plant-bacteria mutualism">Mutualismo planta-bactéria</li>

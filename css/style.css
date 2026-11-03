@@ -1600,6 +1600,153 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 }
 .posdoc__bio:last-of-type { margin-bottom: 1.25rem; }
 
+/* ── Trajetória no LIPA ─────────────────────────────────── */
+.posdoc__trajetoria {
+  margin: 1.75rem 0 1.5rem;
+}
+
+.posdoc__trajetoria-titulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave, #777);
+  margin-bottom: 0.65rem;
+}
+
+.trajetoria-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0;
+}
+
+.trajetoria-etapa {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trajetoria-etapa__icone {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--verde-claro, #d4e8d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.trajetoria-etapa__icone--atual {
+  background: var(--verde, #2d6a4f);
+}
+
+.trajetoria-etapa__info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.trajetoria-etapa__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--texto, #222);
+}
+
+.trajetoria-etapa__sub {
+  font-size: 0.75rem;
+  color: var(--texto-suave, #777);
+}
+
+.trajetoria-etapa__sub--atual {
+  color: var(--verde, #2d6a4f);
+  font-weight: 600;
+}
+
+.trajetoria-seta {
+  font-size: 0.95rem;
+  color: var(--borda, #ccc);
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+  line-height: 2rem;
+}
+
+/* ── Trajetória — botão interativo ──────────────────────── */
+.trajetoria-btn {
+  background: none;
+  border: 1.5px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font: inherit;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+.trajetoria-btn:hover,
+.trajetoria-btn:focus-visible {
+  border-color: var(--verde-claro, #d4e8d4);
+  background: var(--verde-claro, #d4e8d4);
+  outline: none;
+}
+.trajetoria-btn--ativo {
+  border-color: var(--verde, #2d6a4f);
+  background: color-mix(in srgb, var(--verde, #2d6a4f) 10%, transparent);
+}
+
+/* ── Trajetória — dica de interação ─────────────────────── */
+.trajetoria-dica {
+  font-size: 0.72rem;
+  color: var(--texto-suave, #999);
+  margin: 0.35rem 0 0;
+  font-style: italic;
+}
+
+/* ── Trajetória — painel de detalhes (vertical) ─────────── */
+.trajetoria-painel {
+  margin-top: 0.9rem;
+  border: 1px solid var(--borda, #ddd);
+  border-radius: 0.6rem;
+  padding: 1rem 1.1rem;
+  background: var(--fundo-suave, #fafafa);
+}
+
+/* período em destaque */
+.traj-periodo {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--texto, #222);
+  margin: 0 0 0.5rem;
+}
+
+/* lista de detalhes (orientador, título…) */
+.traj-dl {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.traj-dl__linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.25rem;
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+.traj-dl__linha dt {
+  font-weight: 600;
+  color: var(--texto-suave, #777);
+  flex-shrink: 0;
+}
+.traj-dl__linha dd {
+  margin: 0;
+  color: var(--texto, #222);
+  flex: 1;
+  min-width: 0;
+}
+
 /* ── Painel de fotos sticky ────────────────────────────── */
 
 /* align-items: start é obrigatório para sticky funcionar no filho */
@@ -1628,28 +1775,15 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 .hero .painel--4 img:nth-child(3) { bottom: 0;                    left: 0; }
 .hero .painel--4 img:nth-child(4) { bottom: 0;                    right: 0; }
 
-/* Em telas pequenas: desativa sticky e volta ao grid 2×2 normal */
+/* Em telas pequenas volta ao fluxo normal */
 @media (max-width: 52rem) {
-  .hero { align-items: stretch !important; flex-direction: column; }
-
-  /* Fotos sobem antes do texto */
-  .hero .midia.painel--4 { order: -1; }
-
   .hero .midia.painel--4 {
     position: static !important;
-    height: auto !important;
-    min-height: unset;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.25rem;
+    height: auto;
+    min-height: 24rem;
   }
-
   .hero .painel--4 img {
-    position: static !important;
-    width: 100%;
-    height: 40vw;
-    object-fit: cover;
+    height: calc(50% - 2px);
   }
 }
 
@@ -1695,74 +1829,6 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-}
-
-/* ============================================================
-   ADAPTAÇÕES MOBILE — apenas max-width, nada de desktop
-   ============================================================ */
-
-/* ── Menu principal: alinhamento à esquerda em mobile ── */
-@media (max-width: 52rem) {
-  .topo:not(.topo--compacto) .menu {
-    justify-content: flex-start;
-  }
-
-  /* Nome do laboratório menor no mobile: 2 linhas em vez de 3 */
-  .topo__nome {
-    font-size: clamp(1rem, 4.5vw, 1.3rem);
-  }
-}
-
-/* ── Botão sanduíche no .topo normal: oculto no desktop, ativo no mobile ── */
-.topo:not(.topo--compacto) .menu-botao {
-  display: none;
-}
-
-@media (max-width: 52rem) {
-  /* Mostra o botão */
-  .topo:not(.topo--compacto) .menu-botao {
-    display: grid;
-    place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    color: #fff;
-    flex: none;
-  }
-
-  /* Esconde o nav por padrão */
-  .topo:not(.topo--compacto) nav {
-    display: none;
-  }
-
-  /* Mostra quando aberto */
-  .topo:not(.topo--compacto).topo--aberto nav {
-    display: block;
-  }
-
-  /* Menu em coluna vertical */
-  .topo:not(.topo--compacto).topo--aberto .menu {
-    flex-direction: column;
-    gap: 0;
-    padding: 0.5rem 0;
-  }
-
-  .topo:not(.topo--compacto).topo--aberto .menu a {
-    display: block;
-    padding: 0.75rem var(--margem);
-  }
-
-  .topo:not(.topo--compacto).topo--aberto .menu a:hover {
-    background: rgba(255,255,255,0.12);
-  }
-}
-
-/* ── Carrossel de linhas de pesquisa: 1 card por vez em mobile ── */
-/* Sobrescreve a regra 85% anterior para garantir 1 card visível */
-@media (max-width: 40rem) {
-  .linhas-faixa .galeria-local__item { flex: 0 0 min(92%, 20rem) !important; }
 }
 
 /* Foto */

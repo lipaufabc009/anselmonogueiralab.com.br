@@ -54,6 +54,108 @@
           Bolsista FAPESP
         </p>
 
+        <div class="posdoc__trajetoria">
+          <h2 class="posdoc__trajetoria-titulo"
+            data-pt="Trajetória no LIPA" data-en="Journey at LIPA">Trajetória no LIPA</h2>
+
+          <div class="trajetoria-strip">
+
+            <!-- etapa Doutorado -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="doutorado">
+              <div class="trajetoria-etapa__icone">🎓</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Doutorado" data-en="PhD">Doutorado</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="orientado · 2019–2023" data-en="supervised · 2019–2023">orientado · 2019–2023</span>
+              </div>
+            </button>
+
+            <span class="trajetoria-seta" aria-hidden="true">→</span>
+
+            <!-- etapa Pós-doc -->
+            <button class="trajetoria-etapa trajetoria-etapa--atual trajetoria-btn" aria-expanded="false" data-etapa="posdoc">
+              <div class="trajetoria-etapa__icone trajetoria-etapa__icone--atual">🔬</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Pós-doc" data-en="Postdoc">Pós-doc</span>
+                <span class="trajetoria-etapa__sub trajetoria-etapa__sub--atual"
+                  data-pt="supervisão · atual" data-en="supervised · current">supervisão · atual</span>
+              </div>
+            </button>
+
+          </div><!-- /trajetoria-strip -->
+
+          <p class="trajetoria-dica"
+            data-pt="Clique em uma etapa para ver detalhes."
+            data-en="Click a step to see details.">Clique em uma etapa para ver detalhes.</p>
+
+          <div class="trajetoria-painel" id="trajetoria-painel" hidden>
+
+            <!-- detalhes Doutorado -->
+            <div class="trajetoria-detalhe" id="detalhe-doutorado" hidden>
+              <p class="traj-periodo">2019–2023 · UFABC</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientador" data-en="Supervisor">Orientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Coorientador" data-en="Co-supervisor">Coorientador:</dt>
+                  <dd>Matheus Fortes Santos</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd>The evolution and consequences of ecological specialization in a Neotropical plant system.</dd>
+                </div>
+              </dl>
+            </div><!-- /detalhe-doutorado -->
+
+            <!-- detalhes Pós-doc -->
+            <div class="trajetoria-detalhe" id="detalhe-posdoc" hidden>
+              <p class="traj-periodo">2026– · UFABC</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Supervisor" data-en="Supervisor">Supervisor:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Bolsista" data-en="Fellow">Bolsista:</dt>
+                  <dd>FAPESP</dd>
+                </div>
+              </dl>
+            </div><!-- /detalhe-posdoc -->
+
+          </div><!-- /trajetoria-painel -->
+        </div><!-- /posdoc__trajetoria -->
+
+        <script>
+          (function () {
+            var btns = document.querySelectorAll('.trajetoria-btn');
+            var painel = document.getElementById('trajetoria-painel');
+            var detalhes = document.querySelectorAll('.trajetoria-detalhe');
+
+            btns.forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                var etapa = btn.dataset.etapa;
+                var jaAberto = btn.getAttribute('aria-expanded') === 'true';
+
+                btns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); b.classList.remove('trajetoria-btn--ativo'); });
+                detalhes.forEach(function (d) { d.hidden = true; });
+
+                if (jaAberto) {
+                  painel.hidden = true;
+                } else {
+                  btn.setAttribute('aria-expanded', 'true');
+                  btn.classList.add('trajetoria-btn--ativo');
+                  document.getElementById('detalhe-' + etapa).hidden = false;
+                  painel.hidden = false;
+                }
+              });
+            });
+          })();
+        </script>
+
         <!-- Interesses: máx. 5 pílulas -->
         <ul class="posdoc__interesses">
           <li data-pt="Fixação biológica de nitrogênio" data-en="Biological nitrogen fixation">Fixação biológica de nitrogênio</li>

@@ -49,6 +49,108 @@
           Mestrado pelo Programa de Evolução e Diversidade — Universidade Federal do ABC (UFABC)
         </p>
 
+        <div class="posdoc__trajetoria">
+          <h2 class="posdoc__trajetoria-titulo"
+            data-pt="Trajetória no LIPA" data-en="Journey at LIPA">Trajetória no LIPA</h2>
+
+          <div class="trajetoria-strip">
+
+            <!-- etapa IC -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="ic">
+              <div class="trajetoria-etapa__icone">🎓</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="IC" data-en="Undergrad Research">IC</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="orientado" data-en="supervised">orientado</span>
+              </div>
+            </button>
+
+            <span class="trajetoria-seta" aria-hidden="true">→</span>
+
+            <!-- etapa Mestrado -->
+            <button class="trajetoria-etapa trajetoria-etapa--atual trajetoria-btn" aria-expanded="false" data-etapa="mestrado">
+              <div class="trajetoria-etapa__icone trajetoria-etapa__icone--atual">🔬</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Mestrado" data-en="Master's">Mestrado</span>
+                <span class="trajetoria-etapa__sub trajetoria-etapa__sub--atual"
+                  data-pt="orientado · atual" data-en="supervised · current">orientado · atual</span>
+              </div>
+            </button>
+
+          </div><!-- /trajetoria-strip -->
+
+          <p class="trajetoria-dica"
+            data-pt="Clique em uma etapa para ver detalhes."
+            data-en="Click a step to see details.">Clique em uma etapa para ver detalhes.</p>
+
+          <div class="trajetoria-painel" id="trajetoria-painel" hidden>
+
+            <!-- detalhes IC -->
+            <div class="trajetoria-detalhe" id="detalhe-ic" hidden>
+              <p class="traj-periodo">2018–2022 · UNIFESP</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientador" data-en="Supervisor">Orientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd>Como as abelhas respondem a variações na disponibilidade de grãos de pólen em flores com anteras poricidas?</dd>
+                </div>
+              </dl>
+            </div><!-- /detalhe-ic -->
+
+            <!-- detalhes Mestrado -->
+            <div class="trajetoria-detalhe" id="detalhe-mestrado" hidden>
+              <p class="traj-periodo">2024– · UFABC</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientador" data-en="Supervisor">Orientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Coorientadora" data-en="Co-supervisor">Coorientadora:</dt>
+                  <dd>Lorena Bueno Valadão Mendes</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd>Mercado do pólen: sinalização visual, recurso floral e seleção por abelhas que vibram.</dd>
+                </div>
+              </dl>
+            </div><!-- /detalhe-mestrado -->
+
+          </div><!-- /trajetoria-painel -->
+        </div><!-- /posdoc__trajetoria — trajetoria-script below -->
+
+        <script>
+          (function () {
+            var btns = document.querySelectorAll('.trajetoria-btn');
+            var painel = document.getElementById('trajetoria-painel');
+            var detalhes = document.querySelectorAll('.trajetoria-detalhe');
+
+            btns.forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                var etapa = btn.dataset.etapa;
+                var jaAberto = btn.getAttribute('aria-expanded') === 'true';
+
+                btns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); b.classList.remove('trajetoria-btn--ativo'); });
+                detalhes.forEach(function (d) { d.hidden = true; });
+
+                if (jaAberto) {
+                  painel.hidden = true;
+                } else {
+                  btn.setAttribute('aria-expanded', 'true');
+                  btn.classList.add('trajetoria-btn--ativo');
+                  document.getElementById('detalhe-' + etapa).hidden = false;
+                  painel.hidden = false;
+                }
+              });
+            });
+          })();
+        </script>
+
         <ul class="posdoc__interesses">
           <li data-pt="Ecologia da polinização" data-en="Pollination ecology">Ecologia da polinização</li>
           <li data-pt="Polinização por vibração" data-en="Buzz pollination">Polinização por vibração</li>
