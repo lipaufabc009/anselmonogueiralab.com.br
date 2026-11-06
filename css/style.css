@@ -1586,7 +1586,7 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--verde);
-  margin: 2.00rem 0 0.75rem;
+  margin: 0 0 0.75rem;
   padding-bottom: 0.35rem;
   border-bottom: 1.5px solid var(--verde-claro);
 }
@@ -1699,7 +1699,7 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 .trajetoria-dica {
   font-size: 0.72rem;
   color: var(--texto-suave, #999);
-  margin: 0.50rem 0 2.50rem;
+  margin: 0.75rem 0 0;
   font-style: italic;
 }
 
@@ -1775,15 +1775,13 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 .hero .painel--4 img:nth-child(3) { bottom: 0;                    left: 0; }
 .hero .painel--4 img:nth-child(4) { bottom: 0;                    right: 0; }
 
-/* Em telas pequenas volta ao fluxo normal */
+/* Em telas pequenas: painel sai do sticky mas continua como
+   containing block para as imgs absolutas */
 @media (max-width: 52rem) {
   .hero .midia.painel--4 {
-    position: static !important;
-    height: auto;
-    min-height: 24rem;
-  }
-  .hero .painel--4 img {
-    height: calc(50% - 2px);
+    position: relative !important;  /* mantém contexto para position:absolute dos filhos */
+    height: 24rem;                  /* altura explícita para as imgs se ancorarem */
+    min-height: unset;
   }
 }
 
