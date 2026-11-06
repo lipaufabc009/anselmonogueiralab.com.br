@@ -236,6 +236,102 @@
             </p>
           </li>
         </ul>
+
+        <!-- Link discreto "ver outros alumni" -->
+        <div style="text-align:right; margin-top:1rem;">
+          <button class="alumni-extra__link"
+                  data-pt="ver outros alumni →"
+                  data-en="see other alumni →"
+                  onclick="document.getElementById('alumni-extra-modal').removeAttribute('hidden')"
+                  aria-haspopup="dialog">
+            ver outros alumni →
+          </button>
+        </div>
+
+        <!-- Modal com alumni que passaram por outros cargos -->
+        <div id="alumni-extra-modal" hidden role="dialog" aria-modal="true"
+             aria-labelledby="alumni-extra-titulo"
+             class="alumni-extra__overlay"
+             onclick="if(event.target===this)this.setAttribute('hidden','')">
+          <div class="alumni-extra__caixa">
+            <div class="alumni-extra__cabecalho">
+              <h3 id="alumni-extra-titulo"
+                  class="alumni-extra__titulo"
+                  data-pt="Membros que já foram alumni"
+                  data-en="Members who were once alumni">
+                Membros que já foram alumni
+              </h3>
+              <button class="alumni-extra__fechar"
+                      aria-label="Fechar"
+                      onclick="document.getElementById('alumni-extra-modal').setAttribute('hidden','')">
+                ✕
+              </button>
+            </div>
+            <ul class="membros alumni-extra__grade">
+              <li class="membro">
+                <a class="membro__moldura" href="pessoas/bruna-barbosa.html" tabindex="-1" aria-hidden="true">
+                  <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Bruna Barbosa">
+                </a>
+                <h3><a href="pessoas/bruna-barbosa.html">Bruna Barbosa</a></h3>
+                <p data-pt="Atualmente: Doutorado pela UFABC."
+                   data-en="Currently: PhD student at UFABC.">
+                  Atualmente: Doutorado pela UFABC.
+                </p>
+                <p class="alumni-extra__antes"
+                   data-pt="Anteriormente: Iniciação Científica"
+                   data-en="Previously: Undergraduate Research">
+                  Anteriormente: Iniciação Científica
+                </p>
+              </li>
+              <li class="membro">
+                <a class="membro__moldura" href="pessoas/guilherme-mota.html" tabindex="-1" aria-hidden="true">
+                  <img class="membro__foto" src="img/guilherme-mota.jpeg" alt="Foto de Guilherme Mota">
+                </a>
+                <h3><a href="pessoas/guilherme-mota.html">Guilherme Mota</a></h3>
+                <p data-pt="Atualmente: Mestrado pela UFABC."
+                   data-en="Currently: Master's student at UFABC.">
+                  Atualmente: Mestrado pela UFABC.
+                </p>
+                <p class="alumni-extra__antes"
+                   data-pt="Anteriormente: Iniciação Científica"
+                   data-en="Previously: Undergraduate Research">
+                  Anteriormente: Iniciação Científica
+                </p>
+              </li>
+              <li class="membro">
+                <a class="membro__moldura" href="pessoas/eduardo-nery.html" tabindex="-1" aria-hidden="true">
+                  <img class="membro__foto" src="img/edu-1.jpeg" alt="Foto de Eduardo Nery">
+                </a>
+                <h3><a href="pessoas/eduardo-nery.html">Eduardo Nery</a></h3>
+                <p data-pt="Atualmente: Pós-doutor pela UFABC."
+                   data-en="Currently: Postdoctoral fellow at UFABC.">
+                  Atualmente: Pós-doutor pela UFABC.
+                </p>
+                <p class="alumni-extra__antes"
+                   data-pt="Anteriormente: Doutorando"
+                   data-en="Previously: PhD student">
+                  Anteriormente: Doutorando
+                </p>
+              </li>
+              <li class="membro">
+                <a class="membro__moldura" href="pessoas/caian-gerolamo.html" tabindex="-1" aria-hidden="true">
+                  <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Caian Gerolamo">
+                </a>
+                <h3><a href="pessoas/caian-gerolamo.html">Caian Gerolamo</a></h3>
+                <p data-pt="Atualmente: Colaborador."
+                   data-en="Currently: Collaborator.">
+                  Atualmente: Colaborador.
+                </p>
+                <p class="alumni-extra__antes"
+                   data-pt="Anteriormente: Coorientado de doutorado"
+                   data-en="Previously: Co-supervised PhD student">
+                  Anteriormente: Coorientado de doutorado
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -249,7 +345,59 @@
             EDITAR: uma frase sobre as colaborações nacionais e internacionais do laboratório.
           </p>
         </div>
+
+        <h3 class="titulo-subsecao" data-pt="Nacionais" data-en="National">Nacionais</h3>
         <ul class="membros">
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/juliana-rando.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Juliana Rando">
+            </a>
+            <h3><a href="pessoas/juliana-rando.html">Juliana Rando</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/celio-angolini.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Célio Angolini">
+            </a>
+            <h3><a href="pessoas/celio-angolini.html">Célio Angolini</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/danilo-centeno.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Danilo Centeno">
+            </a>
+            <h3><a href="pessoas/danilo-centeno.html">Danilo Centeno</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/laura-leal.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Laura Leal">
+            </a>
+            <h3><a href="pessoas/laura-leal.html">Laura Leal</a></h3>
+            <p data-pt="Especialista em ecologia e interações planta-animal - Instituição, Brasil."
+               data-en="Specialist in ecology and plant-animal interactions - Institution, Brazil.">
+              Especialista em ecologia e interações planta-animal - Instituição, Brasil.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/italo-coutinho.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Ítalo Coutinho">
+            </a>
+            <h3><a href="pessoas/italo-coutinho.html">Ítalo Coutinho</a></h3>
+            <p data-pt="Especialista em anatomia vegetal - Instituição, Brasil."
+               data-en="Specialist in plant anatomy - Institution, Brazil.">
+              Especialista em anatomia vegetal - Instituição, Brasil.
+            </p>
+          </li>
           <li class="membro">
             <a class="membro__moldura" href="pessoas/caian-gerolamo.html" tabindex="-1" aria-hidden="true">
               <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Caian Gerolamo">
@@ -261,23 +409,117 @@
             </p>
           </li>
           <li class="membro">
-            <a class="membro__moldura" href="pessoas/italo-coutinho.html" tabindex="-1" aria-hidden="true">
-              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Italo Coutinho">
+            <a class="membro__moldura" href="pessoas/vinicius-brito.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Vinícius Brito">
             </a>
-            <h3><a href="pessoas/italo-coutinho.html">Italo Coutinho</a></h3>
-            <p data-pt="Especialista em anatomia vegetal - Instituição, Brasil."
-               data-en="Specialist in plant anatomy - Institution, Brazil.">
-              Especialista em anatomia vegetal - Instituição, Brasil.
+            <h3><a href="pessoas/vinicius-brito.html">Vinícius Brito</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
             </p>
           </li>
           <li class="membro">
-            <a class="membro__moldura" href="pessoas/laura-leal.html" tabindex="-1" aria-hidden="true">
-              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Laura Leal">
+            <a class="membro__moldura" href="pessoas/juliana-el-ottra.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Juliana El Ottra">
             </a>
-            <h3><a href="pessoas/laura-leal.html">Laura Leal</a></h3>
-            <p data-pt="Especialista em ecologia e interações planta-animal - Instituição, Brasil."
-               data-en="Specialist in ecology and plant-animal interactions - Institution, Brazil.">
-              Especialista em ecologia e interações planta-animal - Instituição, Brasil.
+            <h3><a href="pessoas/juliana-el-ottra.html">Juliana El Ottra</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/suzana-alcantara.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Suzana Alcântara">
+            </a>
+            <h3><a href="pessoas/suzana-alcantara.html">Suzana Alcântara</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/rafaela-trad.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Rafaela Trad">
+            </a>
+            <h3><a href="pessoas/rafaela-trad.html">Rafaela Trad</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+        </ul>
+
+        <h3 class="titulo-subsecao" data-pt="Internacionais" data-en="International">Internacionais</h3>
+        <ul class="membros">
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/marcelo-pace.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Marcelo Pace">
+            </a>
+            <h3><a href="pessoas/marcelo-pace.html">Marcelo Pace</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/alexandre-zuntini.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Alexandre Zuntini">
+            </a>
+            <h3><a href="pessoas/alexandre-zuntini.html">Alexandre Zuntini</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/pedro-rey.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Pedro Rey">
+            </a>
+            <h3><a href="pessoas/pedro-rey.html">Pedro Rey</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/judith-bronstein.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Judith Bronstein">
+            </a>
+            <h3><a href="pessoas/judith-bronstein.html">Judith Bronstein</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/euan-james.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Euan James">
+            </a>
+            <h3><a href="pessoas/euan-james.html">Euan James <span data-pt="(in memoriam)" data-en="(in memoriam)">(in memoriam)</span></a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/joel-klein.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Joel Klein">
+            </a>
+            <h3><a href="pessoas/joel-klein.html">Joel Klein</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
+            </p>
+          </li>
+          <li class="membro">
+            <a class="membro__moldura" href="pessoas/wouter-kohlen.html" tabindex="-1" aria-hidden="true">
+              <img class="membro__foto" src="img/pessoa.svg" alt="Foto de Wouter Kohlen">
+            </a>
+            <h3><a href="pessoas/wouter-kohlen.html">Wouter Kohlen</a></h3>
+            <p data-pt="EDITAR: especialidade e instituição."
+               data-en="EDIT: specialty and institution.">
+              EDITAR: especialidade e instituição.
             </p>
           </li>
         </ul>

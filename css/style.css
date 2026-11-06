@@ -286,6 +286,101 @@ a { color: var(--verde-escuro); }
   margin: 0;
 }
 
+/* ── Botão discreto "ver outros alumni" ── */
+.alumni-extra__link {
+  background: none;
+  border: none;
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--texto-suave, #5a6e63);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.alumni-extra__link:hover,
+.alumni-extra__link:focus-visible {
+  color: var(--verde-escuro);
+  text-decoration-color: var(--verde-escuro);
+}
+
+/* ── Overlay / Modal ── */
+.alumni-extra__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 43, 36, 0.55);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.alumni-extra__overlay[hidden] { display: none; }
+
+.alumni-extra__caixa {
+  background: var(--papel);
+  border-radius: 10px;
+  padding: 1.75rem;
+  width: min(100%, 680px);
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 48px rgba(30, 43, 36, 0.28);
+}
+
+.alumni-extra__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.alumni-extra__titulo {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--verde);
+  margin: 0;
+}
+
+.alumni-extra__fechar {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--texto-suave, #5a6e63);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.alumni-extra__fechar:hover { color: var(--tinta); }
+
+.alumni-extra__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1.5rem;
+}
+
+.alumni-extra__antes {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--verde);
+  margin-top: -0.5rem;
+}
+
+.titulo-subsecao {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--verde);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--verde-claro);
+}
+
 /* Linha de cima de cada seção: título à esquerda, frase à direita */
 .secao__topo {
   display: flex;
