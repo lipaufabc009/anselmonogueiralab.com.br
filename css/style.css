@@ -49,7 +49,7 @@ a { color: var(--verde-escuro); }
   outline-offset: 3px;
 }
 
-.container { padding-inline: var(--margem) }
+.container { padding-inline: var(--margem); }
 
 /* Link "ir para o conteúdo" (acessibilidade) */
 .pular {
@@ -2109,4 +2109,83 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   text-align: justify;
   hyphens: auto;
   max-width: none;
+}
+
+/* ════════════════════════════════════════════
+   Páginas de colaboradores (Caian, Ítalo, Marcelo…)
+   ════════════════════════════════════════════ */
+
+.colaborador__nome {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  margin: 0 0 0.2rem;
+}
+
+.colaborador__cargo {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--verde);
+  margin: 0 0 0.1rem;
+}
+
+.colaborador__instituicao {
+  font-size: 0.88rem;
+  color: var(--texto-suave, #666);
+  margin: 0;
+}
+
+/* Pílulas de interesses de pesquisa */
+.colaborador__interesses {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.colaborador__interesses li {
+  background: var(--verde-claro);
+  color: var(--verde-escuro, #1e2b24);
+  font-size: 0.82rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 20px;
+  line-height: 1.3;
+}
+
+/* Título "Sobre" nas páginas de colaboradores
+   (sobrescreve a margem do .posdoc__sobre-titulo do Eduardo Nery) */
+.colaborador__sobre-titulo {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde);
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1.5px solid var(--verde-claro);
+}
+
+/* ── Foto única sticky (Caian, Ítalo, Marcelo…) ── */
+/* align-items: start já declarado globalmente para o Eduardo;
+   garantimos aqui também para o caso de ordem de cascata */
+.hero .midia--foto-unica {
+  position: sticky !important;
+  top: 0;
+  height: 100vh;
+  align-self: start;
+  min-height: unset;
+}
+
+.hero .midia--foto-unica img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+@media (max-width: 52rem) {
+  .hero .midia--foto-unica {
+    position: static !important;
+    height: auto;
+    min-height: 24rem;
+  }
 }
