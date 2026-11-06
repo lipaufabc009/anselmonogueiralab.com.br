@@ -829,6 +829,11 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   }
 }
 
+/* ── Em desktop, o botão hambúrguer nunca aparece no topo normal ── */
+@media (min-width: 52.01rem) {
+  .topo:not(.topo--compacto) .menu-botao { display: none !important; }
+}
+
 /* ── Hambúrguer no topo NORMAL (Home, Equipe…) em mobile ── */
 @media (max-width: 52rem) and (scripting: enabled) {
 
