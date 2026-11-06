@@ -49,7 +49,7 @@ a { color: var(--verde-escuro); }
   outline-offset: 3px;
 }
 
-.container { padding-inline: var(--margem); }
+.container { padding-inline: var(--margem) }
 
 /* Link "ir para o conteúdo" (acessibilidade) */
 .pular {
@@ -284,6 +284,65 @@ a { color: var(--verde-escuro); }
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   text-transform: uppercase;
   margin: 0;
+}
+
+/* ── Contador de orientações ── */
+.secao--sem-topo { padding-top: 1.5rem; border-top: none; }
+
+.contador-orientacoes {
+  background: var(--verde-claro);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+}
+
+.contador-orientacoes__titulo {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde);
+  margin: 0 0 1.25rem;
+}
+
+.contador-orientacoes__grade {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem 1rem;
+}
+
+.contador-orientacoes__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.contador-orientacoes__label {
+  font-size: 0.72rem;
+  color: var(--texto-suave, #5a6e63);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contador-orientacoes__numero {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--verde-escuro);
+  line-height: 1;
+}
+
+.contador-orientacoes__andamento {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--texto-suave, #5a6e63);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 36rem) {
+  .contador-orientacoes__grade {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 /* ── Botão discreto "ver outros alumni" ── */

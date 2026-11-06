@@ -1,17 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR"
-  data-titulo-pt="Nome do Pesquisador | LIPA"
-  data-titulo-en="Researcher Name | LIPA">
+  data-titulo-pt="Caian Gerolamo | LIPA"
+  data-titulo-en="Caian Gerolamo | LIPA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nome do Pesquisador | LIPA</title>
-  <meta name="description" content="Perfil de Nome do Pesquisador no Laboratório de Interações Planta-Animal (LIPA).">
+  <title>Caian Gerolamo | LIPA</title>
+  <meta name="description" content="Perfil de Caian Souza Gerolamo, colaborador do Laboratório de Interações Planta-Animal (LIPA) e professor na Universidade Regional do Cariri (URCA).">
   <script src="../js/acesso.js"></script>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/cabecalho.js" defer></script>
   <script src="../js/idioma.js" defer></script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="9af79787-654b-4eb2-97c4-30496e3b047e"></script>
+
+  <style>
+    /* ── Perfil de colaborador ─────────────────────────────────── */
+
+    .colaborador__nome {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      margin: 0 0 0.2rem;
+    }
+
+    .colaborador__cargo {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--verde);
+      margin: 0 0 0.1rem;
+    }
+
+    .colaborador__instituicao {
+      font-size: 0.88rem;
+      color: var(--texto-suave, #666);
+      margin: 0;
+    }
+
+    /* Interesses */
+    .colaborador__interesses {
+      list-style: none;
+      margin: 0.75rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .colaborador__interesses li {
+      background: var(--verde-claro);
+      color: var(--verde-escuro, #1e2b24);
+      font-size: 0.82rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 20px;
+      line-height: 1.3;
+    }
+
+    /* Sobre */
+    .posdoc__sobre-titulo {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--verde);
+      margin: 1.5rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1.5px solid var(--verde-claro);
+    }
+
+    .posdoc__bio {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      margin: 0 0 1.25rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* ── Trajetória (mesmo estilo do Eduardo Nery) ── */
+    .posdoc__trajetoria { margin-top: 0.5rem; }
+
+    .posdoc__trajetoria-titulo {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--verde);
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1.5px solid var(--verde-claro);
+    }
+
+    /* ── Foto sticky (mesmo comportamento do painel--4 do Eduardo) ── */
+    .hero { align-items: start !important; }
+
+    .hero .midia--foto-unica {
+      position: sticky !important;
+      top: 0;
+      height: 100vh;
+      align-self: start;
+      min-height: unset;
+    }
+
+    .hero .midia--foto-unica img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    @media (max-width: 52rem) {
+      .hero .midia--foto-unica {
+        position: static !important;
+        height: auto;
+        min-height: 24rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -21,14 +120,14 @@
     <a class="topo__nome" href="../index.html">LIPA - Laboratório de Interações Planta-Animal</a>
     <nav aria-label="Principal">
       <ul class="menu">
-        <li><a href="../index.html"            data-pt="Home"            data-en="Home">Home</a></li>
+        <li><a href="../index.html"            data-pt="Home"             data-en="Home">Home</a></li>
         <li><a href="../equipe.html" aria-current="page" data-pt="Equipe" data-en="Team">Equipe</a></li>
-        <li><a href="../projetos.html"         data-pt="Projetos"        data-en="Projects">Projetos</a></li>
-        <li><a href="../publicacoes.html"      data-pt="Publicações"     data-en="Publications">Publicações</a></li>
+        <li><a href="../projetos.html"         data-pt="Projetos"         data-en="Projects">Projetos</a></li>
+        <li><a href="../publicacoes.html"      data-pt="Publicações"      data-en="Publications">Publicações</a></li>
         <li><a href="../locais-de-estudo.html" data-pt="Locais de Estudo" data-en="Study Sites">Locais de Estudo</a></li>
-        <li><a href="../lipa-por-ai.html"      data-pt="LIPA por Aí"    data-en="LIPA Out There">LIPA por Aí</a></li>
-        <li><a href="../links-uteis.html"      data-pt="Links úteis"     data-en="Useful links">Links úteis</a></li>
-        <li><a href="../contato.html"          data-pt="Contato"         data-en="Contact">Contato</a></li>
+        <li><a href="../lipa-por-ai.html"      data-pt="LIPA por Aí"     data-en="LIPA Out There">LIPA por Aí</a></li>
+        <li><a href="../links-uteis.html"      data-pt="Links úteis"      data-en="Useful links">Links úteis</a></li>
+        <li><a href="../contato.html"          data-pt="Contato"          data-en="Contact">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -41,72 +140,229 @@
           data-pt="← Voltar para a Equipe"
           data-en="← Back to Team">← Voltar para a Equipe</a></p>
 
-        <!-- EDITAR: nome completo -->
-        <h1 class="posdoc__nome">Nome do Pesquisador</h1>
+        <h1 class="colaborador__nome">Caian Souza Gerolamo</h1>
 
-        <!-- EDITAR: cargo e instituição -->
-        <p class="posdoc__cargo"
-          data-pt="Pesquisador Pós-Doutor · Instituição"
-          data-en="Postdoctoral Researcher · Institution">
-          Pesquisador Pós-Doutor · Instituição
+        <p class="colaborador__cargo"
+          data-pt="Professor Adjunto · Universidade Regional do Cariri (URCA)"
+          data-en="Adjunct Professor · Regional University of Cariri (URCA)">
+          Professor Adjunto · Universidade Regional do Cariri (URCA)
+        </p>
+        <p class="colaborador__instituicao"
+          data-pt="Juazeiro do Norte, Ceará, Brasil"
+          data-en="Juazeiro do Norte, Ceará, Brazil">
+          Juazeiro do Norte, Ceará, Brasil
         </p>
 
-        <!-- EDITAR: bolsa/financiamento. Apague se não houver. -->
-        <p class="posdoc__financiamento"
-          data-pt="Bolsista XXX"
-          data-en="XXX Fellow">
-          Bolsista XXX
-        </p>
-
-        <!-- Interesses: máx. 5 pílulas. Copie um <li> para adicionar. -->
-        <ul class="posdoc__interesses">
-          <li data-pt="Interesse 1" data-en="Interest 1">Interesse 1</li>
-          <li data-pt="Interesse 2" data-en="Interest 2">Interesse 2</li>
-          <li data-pt="Interesse 3" data-en="Interest 3">Interesse 3</li>
-          <li data-pt="Interesse 4" data-en="Interest 4">Interesse 4</li>
-          <li data-pt="Interesse 5" data-en="Interest 5">Interesse 5</li>
+        <!-- Interesses de pesquisa -->
+        <ul class="colaborador__interesses">
+          <li data-pt="Anatomia vegetal" data-en="Plant anatomy">Anatomia vegetal</li>
+          <li data-pt="Biomecânica de plantas" data-en="Plant biomechanics">Biomecânica de plantas</li>
+          <li data-pt="Hidráulica vegetal" data-en="Plant hydraulics">Hidráulica vegetal</li>
+          <li data-pt="Ecologia de comunidades" data-en="Community ecology">Ecologia de comunidades</li>
+          <li data-pt="Lianas e hábito lianescente" data-en="Lianas and lianescent habit">Lianas e hábito lianescente</li>
+          <li data-pt="Ecofisiologia de plantas" data-en="Plant ecophysiology">Ecofisiologia de plantas</li>
         </ul>
 
         <!-- Sobre -->
         <h2 class="posdoc__sobre-titulo"
           data-pt="Sobre" data-en="About">Sobre</h2>
 
-        <!-- EDITAR: primeiro parágrafo — interesses e objetivos atuais -->
         <p class="posdoc__bio"
-          data-pt="Descreva aqui os interesses de pesquisa e objetivos atuais do pesquisador."
-          data-en="Describe here the researcher's current interests and objectives.">
-          Descreva aqui os interesses de pesquisa e objetivos atuais do pesquisador.
+          data-pt="Sua pesquisa investiga a anatomia vegetal, a biomecânica e a hidráulica de plantas, em especial de lianas — plantas com hábito lianescente que escalam outras espécies. No doutorado, estudou como o status hídrico do ambiente afeta a distribuição, a anatomia, a eficiência e a segurança hidráulica de lianas em florestas tropicais. Seus trabalhos mais recentes exploram a relação entre atributos morfo-funcionais, estratégias hidráulicas para lidar com a seca e a dinâmica de comunidades de plantas em diferentes condições ambientais."
+          data-en="His research investigates plant anatomy, biomechanics, and hydraulics — particularly in lianas, climbing plants that scale other species. His doctoral work examined how water availability affects the distribution, anatomy, hydraulic efficiency and safety of lianas in tropical forests. His most recent work explores the relationship between morpho-functional traits, hydraulic strategies under drought, and plant community dynamics across different environmental conditions.">
+          Sua pesquisa investiga a anatomia vegetal, a biomecânica e a hidráulica de plantas, em especial de lianas — plantas com hábito lianescente que escalam outras espécies. No doutorado, estudou como o status hídrico do ambiente afeta a distribuição, a anatomia, a eficiência e a segurança hidráulica de lianas em florestas tropicais. Seus trabalhos mais recentes exploram a relação entre atributos morfo-funcionais, estratégias hidráulicas para lidar com a seca e a dinâmica de comunidades de plantas em diferentes condições ambientais.
         </p>
 
-        <!-- EDITAR: segundo parágrafo — formação acadêmica -->
         <p class="posdoc__bio"
-          data-pt="Descreva aqui a trajetória acadêmica: graduação, mestrado, doutorado, estágios e áreas de expertise."
-          data-en="Describe here the academic background: undergraduate, master's, PhD, internships and areas of expertise.">
-          Descreva aqui a trajetória acadêmica: graduação, mestrado, doutorado, estágios e áreas de expertise.
+          data-pt="A colaboração com o LIPA teve início durante o mestrado na USP, com a coorientação de Anselmo Nogueira, e se estendeu pelo doutorado e por dois períodos de pós-doutorado na UFABC. As pesquisas em conjunto exploram a ecofisiologia de plantas em condições de estresse, a biomecânica do caule e as interações entre morfologia vegetal e distribuição em florestas tropicais. Atualmente é Professor Adjunto na Universidade Regional do Cariri (URCA), onde integra o Programa de Pós-Graduação em Diversidade e Recursos Naturais (PPGDR)."
+          data-en="His collaboration with LIPA began during his Master's at USP, with co-supervision by Anselmo Nogueira, and continued through his PhD and two postdoctoral stays at UFABC. Joint research explores plant ecophysiology under stress, stem biomechanics, and the relationship between plant morphology and distribution in tropical forests. He is currently an Adjunct Professor at the Regional University of Cariri (URCA), where he is a member of the Graduate Program in Diversity and Natural Resources (PPGDR).">
+          A colaboração com o LIPA teve início durante o mestrado na USP, com a coorientação de Anselmo Nogueira, e se estendeu pelo doutorado e por dois períodos de pós-doutorado na UFABC. As pesquisas em conjunto exploram a ecofisiologia de plantas em condições de estresse, a biomecânica do caule e as interações entre morfologia vegetal e distribuição em florestas tropicais. Atualmente é Professor Adjunto na Universidade Regional do Cariri (URCA), onde integra o Programa de Pós-Graduação em Diversidade e Recursos Naturais (PPGDR).
         </p>
 
+        <!-- Trajetória no LIPA -->
+        <div class="posdoc__trajetoria">
+          <h2 class="posdoc__trajetoria-titulo"
+            data-pt="Trajetória no LIPA" data-en="Journey at LIPA">Trajetória no LIPA</h2>
+
+          <div class="trajetoria-strip">
+
+            <!-- Mestrado -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="mestrado">
+              <div class="trajetoria-etapa__icone">📚</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Mestrado" data-en="Master's">Mestrado</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="coorientado · 2013–2016" data-en="co-supervised · 2013–2016">coorientado · 2013–2016</span>
+              </div>
+            </button>
+
+            <span class="trajetoria-seta" aria-hidden="true">→</span>
+
+            <!-- Doutorado -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="doutorado">
+              <div class="trajetoria-etapa__icone">🎓</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Doutorado" data-en="PhD">Doutorado</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="coorientado · 2018–2022" data-en="co-supervised · 2018–2022">coorientado · 2018–2022</span>
+              </div>
+            </button>
+
+            <span class="trajetoria-seta" aria-hidden="true">→</span>
+
+            <!-- Pós-doc 1 -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="posdoc1">
+              <div class="trajetoria-etapa__icone">🔬</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Pós-doc I" data-en="Postdoc I">Pós-doc I</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="orientado · 2022–2023" data-en="supervised · 2022–2023">orientado · 2022–2023</span>
+              </div>
+            </button>
+
+            <span class="trajetoria-seta" aria-hidden="true">→</span>
+
+            <!-- Pós-doc 2 -->
+            <button class="trajetoria-etapa trajetoria-btn" aria-expanded="false" data-etapa="posdoc2">
+              <div class="trajetoria-etapa__icone">🔬</div>
+              <div class="trajetoria-etapa__info">
+                <span class="trajetoria-etapa__label"
+                  data-pt="Pós-doc II" data-en="Postdoc II">Pós-doc II</span>
+                <span class="trajetoria-etapa__sub"
+                  data-pt="orientado · 2024–2025" data-en="supervised · 2024–2025">orientado · 2024–2025</span>
+              </div>
+            </button>
+
+          </div><!-- /trajetoria-strip -->
+
+          <p class="trajetoria-dica"
+            data-pt="Clique em uma etapa para ver detalhes."
+            data-en="Click a step to see details.">Clique em uma etapa para ver detalhes.</p>
+
+          <div class="trajetoria-painel" id="trajetoria-painel" hidden>
+
+            <!-- detalhes Mestrado -->
+            <div class="trajetoria-detalhe" id="detalhe-mestrado" hidden>
+              <p class="traj-periodo">2013–2016 · Universidade de São Paulo (USP)</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientadora" data-en="Supervisor">Orientadora:</dt>
+                  <dd>Veronica Angyalossy</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Coorientador" data-en="Co-supervisor">Coorientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd data-pt="Dinâmica, anatomia, biomecânica e condutividade hídrica de lianas da Floresta Amazônica"
+                      data-en="Dynamics, anatomy, biomechanics and hydraulic conductivity of lianas in the Amazon Forest">Dinâmica, anatomia, biomecânica e condutividade hídrica de lianas da Floresta Amazônica</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- detalhes Doutorado -->
+            <div class="trajetoria-detalhe" id="detalhe-doutorado" hidden>
+              <p class="traj-periodo">2018–2022 · Universidade de São Paulo (USP)</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Orientadora" data-en="Supervisor">Orientadora:</dt>
+                  <dd>Veronica Angyalossy</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Coorientador" data-en="Co-supervisor">Coorientador:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Título" data-en="Title">Título:</dt>
+                  <dd data-pt="O efeito do status hídrico na distribuição, anatomia, eficiência e segurança hidráulica de lianas em florestas tropicais"
+                      data-en="The effect of water status on the distribution, anatomy, efficiency and hydraulic safety of lianas in tropical forests">O efeito do status hídrico na distribuição, anatomia, eficiência e segurança hidráulica de lianas em florestas tropicais</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Bolsista" data-en="Fellow">Bolsista:</dt>
+                  <dd>CAPES</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- detalhes Pós-doc I -->
+            <div class="trajetoria-detalhe" id="detalhe-posdoc1" hidden>
+              <p class="traj-periodo">2022–2023 · UFABC</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Supervisor" data-en="Supervisor">Supervisor:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Bolsista" data-en="Fellow">Bolsista:</dt>
+                  <dd>CNPq</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- detalhes Pós-doc II -->
+            <div class="trajetoria-detalhe" id="detalhe-posdoc2" hidden>
+              <p class="traj-periodo">2024–2025 · UFABC</p>
+              <dl class="traj-dl">
+                <div class="traj-dl__linha">
+                  <dt data-pt="Supervisor" data-en="Supervisor">Supervisor:</dt>
+                  <dd>Anselmo Nogueira</dd>
+                </div>
+                <div class="traj-dl__linha">
+                  <dt data-pt="Bolsista" data-en="Fellow">Bolsista:</dt>
+                  <dd>FAPESP</dd>
+                </div>
+              </dl>
+            </div>
+
+          </div><!-- /trajetoria-painel -->
+        </div><!-- /posdoc__trajetoria -->
+
+        <script>
+          (function () {
+            var btns = document.querySelectorAll('.trajetoria-btn');
+            var painel = document.getElementById('trajetoria-painel');
+            var detalhes = document.querySelectorAll('.trajetoria-detalhe');
+
+            btns.forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                var etapa = btn.dataset.etapa;
+                var jaAberto = btn.getAttribute('aria-expanded') === 'true';
+
+                btns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); b.classList.remove('trajetoria-btn--ativo'); });
+                detalhes.forEach(function (d) { d.hidden = true; });
+
+                if (jaAberto) {
+                  painel.hidden = true;
+                } else {
+                  btn.setAttribute('aria-expanded', 'true');
+                  btn.classList.add('trajetoria-btn--ativo');
+                  document.getElementById('detalhe-' + etapa).hidden = false;
+                  painel.hidden = false;
+                }
+              });
+            });
+          })();
+        </script>
+
+        <!-- Links -->
         <ul class="links">
-          <!-- EDITAR: adicione ou remova botões conforme disponível -->
-          <li><a class="botao botao--contorno" href="http://lattes.cnpq.br/XXXXXXXXXXXXXXXXX" target="_blank" rel="noopener"
-            data-pt="Currículo Lattes" data-en="Lattes CV">Currículo Lattes</a></li>
-          <!-- <li><a class="botao botao--contorno" href="https://www.researchgate.net/profile/XXX" target="_blank" rel="noopener">ResearchGate</a></li> -->
-          <!-- <li><a class="botao botao--contorno" href="https://orcid.org/XXXX-XXXX-XXXX-XXXX" target="_blank" rel="noopener">ORCID</a></li> -->
-          <!-- EDITAR: substitua "nome-do-pesquisador" pelo código usado em data-autores nas publicações -->
-          <li><a class="botao botao--contorno" href="../publicacoes.html?autor=nome-do-pesquisador&amp;nome=Nome%20do%20Pesquisador"
+          <li><a class="botao botao--contorno" href="https://www.researchgate.net/profile/Caian-Gerolamo" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a class="botao botao--contorno" href="http://lattes.cnpq.br/3922791314879492" target="_blank" rel="noopener" data-pt="Currículo Lattes" data-en="Lattes CV">Currículo Lattes</a></li>
+          <li><a class="botao botao--contorno" href="../publicacoes.html?autor=caian-gerolamo&amp;nome=Caian%20Gerolamo"
             data-pt="Ver publicações" data-en="View publications">Ver publicações</a></li>
         </ul>
 
       </div>
 
-      <!-- Painel de 4 fotos sticky.
-           EDITAR: substitua os src pelas fotos reais (na pasta img/).
-           Para painel de 2 fotos: troque "painel--4" por "painel--2" e apague as duas últimas linhas <img>. -->
-      <div class="midia painel painel--4">
-        <img src="../img/pessoa.svg" alt="Foto de Nome do Pesquisador">
-        <img src="../img/campo.svg"  alt="EDITAR: descreva a foto 2">
-        <img src="../img/campo.svg"  alt="EDITAR: descreva a foto 3">
-        <img src="../img/campo.svg"  alt="EDITAR: descreva a foto 4">
+      <!-- Foto única sticky -->
+      <div class="midia midia--foto-unica">
+        <img src="../img/caian-gerolamo.jpeg" alt="Foto de Caian Souza Gerolamo">
       </div>
+
     </section>
   </main>
 
