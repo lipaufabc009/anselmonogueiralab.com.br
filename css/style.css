@@ -829,6 +829,59 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   }
 }
 
+/* ── Hambúrguer no topo NORMAL (Home, Equipe…) em mobile ── */
+@media (max-width: 52rem) and (scripting: enabled) {
+
+  /* A faixa nome+idioma vira flex para acomodar o botão */
+  .topo:not(.topo--compacto) .topo__faixa {
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+  }
+
+  /* O botão aparece (estava display:none globalmente) */
+  .topo:not(.topo--compacto) .menu-botao {
+    display: grid;
+  }
+
+  /* A nav vira painel flutuante igual ao compacto */
+  .topo:not(.topo--compacto) nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: min(100%, 17rem);
+    z-index: 25;
+    box-shadow: 0 10px 24px rgba(30, 43, 36, 0.28);
+    transform: none;
+    transition: none;
+  }
+  .topo:not(.topo--compacto):not(.topo--aberto) nav { display: none; }
+
+  /* Itens em coluna, sem borda inferior */
+  .topo:not(.topo--compacto) .menu {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.4rem 0;
+    border-top: 0;
+  }
+  .topo:not(.topo--compacto) .menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 0;
+    font-size: 0.9rem;
+  }
+  .topo:not(.topo--compacto) .menu a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-bottom: 0;
+  }
+  .topo:not(.topo--compacto) .menu a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .menu-botao__barras,
   .menu-botao__barras::before,
