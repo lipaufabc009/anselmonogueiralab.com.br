@@ -2184,8 +2184,10 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 
 @media (max-width: 52rem) {
   .hero .midia--foto-unica {
-    position: static !important;
-    height: 22rem;
+    position: relative !important;
+    top: auto;
+    height: 24rem;
     min-height: unset;
+    align-self: auto;
   }
 }
