@@ -121,6 +121,8 @@ a { color: var(--verde-escuro); }
   font-size: 1.2rem;
   max-width: 48ch;
   margin-bottom: 1.75rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Caixa da imagem: a foto preenche toda a metade da página */
@@ -1331,6 +1333,8 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   font-size: 0.97rem;
   margin: 0;
   max-width: none;
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Setas: mesma aparência do galeria-local, posição ajustada */
