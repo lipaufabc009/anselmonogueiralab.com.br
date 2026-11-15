@@ -9,13 +9,16 @@
     var btnNext = galeria.querySelector('.galeria-local__btn--next');
     if (!faixa || !btnPrev || !btnNext) return;
 
-    // Quanto deslocar a cada clique: largura de uma foto + gap
+    // Quanto deslocar a cada clique: largura de um item (foto ou wrapper de vídeo) + gap
     function passo() {
-      var foto = faixa.querySelector('.galeria-local__foto');
-      if (!foto) return faixa.offsetWidth;
+      /* tenta primeiro uma imagem normal, depois o wrapper de vídeo, depois o próprio item */
+      var ref = faixa.querySelector('img.galeria-local__foto') ||
+                faixa.querySelector('.galeria-local__video-wrapper') ||
+                faixa.querySelector('.galeria-local__item');
+      if (!ref) return faixa.offsetWidth;
       var style = window.getComputedStyle(faixa);
       var gap = parseFloat(style.gap || style.columnGap) || 16;
-      return foto.offsetWidth + gap;
+      return ref.offsetWidth + gap;
     }
 
     function atualizar() {

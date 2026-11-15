@@ -1608,7 +1608,7 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
   margin: 0 0 0.75rem;
 }
 
-.local__descricao { margin: 0 0 1rem; max-width: 60ch; }
+.local__descricao { margin: 0 0 1rem; max-width: 60ch; text-align: justify; hyphens: auto; }
 
 
 /* Mapa */
@@ -1711,6 +1711,103 @@ html { scroll-padding-top: 5rem; } /* links internos (#...) não ficam escondido
 
 @media (prefers-reduced-motion: reduce) {
   .galeria-local__foto { transition: none; }
+}
+
+/* ── Vídeo no carrossel: miniatura estática + botão play ── */
+video.galeria-local__foto {
+  cursor: default;
+  pointer-events: none; /* cliques vão para o botão play */
+}
+.galeria-local__item:hover video.galeria-local__foto { transform: none; }
+
+/* Wrapper para posicionar o botão sobre a miniatura */
+.galeria-local__video-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--verde-claro);
+}
+.galeria-local__video-wrapper video.galeria-local__foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  border-radius: 0;
+}
+
+/* Botão de play centralizado sobre o vídeo */
+.galeria-local__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 35, 28, 0.32);
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.galeria-local__play:hover { background: rgba(20, 35, 28, 0.52); }
+.galeria-local__play::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.1rem 0 1.1rem 1.9rem;
+  border-color: transparent transparent transparent rgba(255,255,255,0.92);
+  margin-left: 0.3rem; /* compensação óptica */
+}
+
+/* ── Lightbox: navegação entre fotos ── */
+.lightbox__midia { display: flex; align-items: center; justify-content: center; }
+.lightbox__midia img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.lightbox__midia video {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 4px;
+}
+
+/* Setas de navegação dentro do lightbox */
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  color: rgba(255,255,255,0.85);
+  font-size: 3.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  transition: color 0.15s;
+  z-index: 2;
+}
+.lightbox__nav:hover { color: #fff; }
+.lightbox__nav--prev { left: -3rem; }
+.lightbox__nav--next { right: -3rem; }
+.lightbox__nav[hidden] { display: none; }
+
+@media (max-width: 52rem) {
+  .lightbox__nav--prev { left: 0.25rem; }
+  .lightbox__nav--next { right: 0.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria-local__play { transition: none; }
+  .lightbox__nav { transition: none; }
 }
 
 /* ════════════════════════════════════════════
