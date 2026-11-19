@@ -451,7 +451,7 @@ a { color: var(--verde-escuro); }
   gap: 1rem 3rem;
   margin-bottom: 2rem;
 }
-.secao__topo p { margin: 0; max-width: 40ch; font-style: italic; }
+.secao__topo p { margin: 0; max-width: 60ch; font-style: italic; }
 @media (min-width: 52rem) { .secao__topo p { text-align: right; } }
 
 /* Perfil: foto de um lado, texto do outro (pesquisador principal e páginas individuais) */
@@ -570,6 +570,9 @@ a { color: var(--verde-escuro); }
 
 /* ---------- Página individual do projeto ---------- */
 .projeto__processo { font-style: italic; font-size: 1.1rem; margin-bottom: 1.25rem; }
+
+/* Texto justificado na página individual do projeto */
+.hero__bloco > p { text-align: justify; hyphens: auto; }
 
 /* Versão invertida do destaque: imagens à esquerda, texto à direita */
 @media (min-width: 52rem) {
